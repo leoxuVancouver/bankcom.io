@@ -1,0 +1,287 @@
+/*
+ --------------------------------------------------------------------
+  site:			中国建设银行-善融商城个人商城-基础样式
+  author:		广州时代财富科技有限公司
+  updated:		2014年08月
+  updated by:   Mao
+  --------------------------------------------------------------------
+*/
+@charset "utf-8";
+/* 标签重置 */
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,input,textarea,p,th,td {
+    margin:0;
+    padding:0;
+}
+body{
+    font-size:12px;
+    font-family:'Microsoft YaHei', Arial, '宋体', Helvetica, sans-serif;
+    color:#333333;
+    background-color:#FFFFFF;}
+img {
+    border:0;}
+ol,ul {
+    list-style:none;
+}
+a{
+    outline:none;
+    color:#333333;
+    text-decoration:none;
+    cursor:pointer;
+    font-weight:normal;
+}
+a:visited{
+    color:#333333;
+    text-decoration:none
+}
+a:hover{
+    text-decoration: underline;
+    color:#ff6600;
+}
+
+a.alink{
+    color:#0b61aa;
+    margin:0 5px 0 0px;
+    display:inline-block;
+}
+
+em{
+    font-style:normal;
+}
+form{
+    margin:0px;
+}
+i{
+    font-style:normal;
+}
+
+/*浮动*/
+.left{
+    float:left;
+}
+.right{
+    float:right;
+}
+.clear{
+    clear:both;
+}
+.block{
+    display:block;
+}
+.binline{
+    display:inline-block;
+}
+.hide{
+    display:none;
+}
+.vtop{
+    vertical-align:top;
+}
+.middle{
+    vertical-align:middle;
+}
+.bottom{
+    vertical-align:bottom;
+}
+.center{
+    text-align:center;
+}
+.tleft{
+    text-align:left;
+}
+.tright{
+    text-align:right
+}
+.rel{
+    position:relative;
+}
+.abs{
+    position:absolute;
+}
+/*文本*/
+.ellipsis{
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.b{
+    font-weight:bold;
+}
+.normal{
+    font-weight:400;
+    font-style:normal;
+}
+.yahei{
+    font-family:'\5FAE\8F6F\96C5\9ED1';
+}
+
+/*文本色值*/
+.red{
+    color:#e21020;}
+.n_red{
+    color:#e21020;
+}
+/*.blue{
+    color:#3366cc;}*//*陈波 2015-12-07修改*/
+.lblue{
+    color:#3366cc ;}
+.blblue{
+    color:#3366cc ;
+    font-weight:bold;
+}
+.orange{
+    color:#ff6600;
+}
+.white{
+    color:#FFFFFF;
+}
+.black{
+    color:#000000;
+}
+.lgrey{
+    color:#9c9c9c;
+}
+.ccc-gray{
+    color:#ccc
+}
+
+
+/*背景色*/
+/*灰白*/
+.bg_f1f1f1{
+    background:#f1f1f1
+}
+/*蓝色*/
+.bg_0090ca{
+    background:#0090ca
+}
+.bl_cdddea{
+    border-left:1px solid #cdddea;
+}
+.linkBlue{
+    color:#006699;
+}
+a.linkBlue:visited{
+    color:#006699;
+}
+
+
+.fl{float:left;}
+.b0{border:0px}
+/*间距&补丁*/
+.ml1{margin-left:1px !important;}
+.mr1{margin-right:1px !important;}
+.mb5{margin-bottom:5px !important;}
+.ml5{margin-left:5px !important;}
+.mr5{margin-right:5px !important;}
+.mh5{margin:0px 5px !important;}
+.mv5{margin:5px 0px !important;}
+.m5{margin:5px !important;}
+.mt6{margin-top:6px !important;}
+.mb10{margin-bottom:10px !important;}
+.ml10{margin-left:10px !important;}
+.mr10{margin-right:10px !important;}
+.mh10{margin:0px 10px !important;}
+.mv10{margin:10px 0px !important;}
+.m10{margin:10px !important;}
+.ml15{margin-left:15px !important;}
+.mlr5{margin:0 5px !important;}
+.mlr10{margin:0 10px !important;}
+.pt5{padding-top:5px !important;}
+.pb5{padding-bottom:5px !important;}
+.pl5{padding-left:5px !important;}
+.pl25{padding-left:25px !important;}
+.pr5{padding-right:5px !important;}
+.ph5{padding:0px 5px !important;}
+.pv5{padding:5px 0px !important;}
+.p5{padding:5px !important;}
+.p20{padding:20px !important;}
+.pt10{padding-top:10px !important;}
+.pb10{padding-bottom:10px !important;}
+.pl10{padding-left:10px !important;}
+.pr10{padding-right:10px !important;}
+.ph10{padding:0px 10px !important;}
+.pv10{padding:10px 0px !important;}
+.p10{padding:10px !important;}
+.pl15{padding-left:15px !important;}
+.pt15{padding-top:15px !important;}
+.mt2{margin-top:2px !important}
+.mt5{margin-top:5px !important;}
+.mt6{margin-top:6px !important;}
+.mt7{margin-top:7px !important;}
+.mt10{margin-top:10px !important;}
+.mt20{margin-top:20px !important;}
+.mt30{margin-top:30px !important;}
+.mt50{margin-top:50px !important;}
+.ml30{margin-left:30px !important;}
+.ml35{margin-left:35px !important;}
+.ml40{margin-left:40px !important;}
+.ml60{margin-left:60px !important;}
+.ml90{margin-left:90px !important;}
+.ml105{margin-left:105px;}
+.mtr20{
+    margin:20px 20px 0 0;
+}
+.mr10{
+    margin-right:10px;
+}
+.mr20{
+    margin-right:20px;
+}
+.mr25{
+    margin-right:25px;
+}
+.mr30{
+    margin-right:30px;
+}
+
+
+/*去掉边框*/
+.border{
+    border:1px solid #ddd;
+}
+.b_gray{
+    border:1px solid #ccc;
+}
+.b0{border:0px}
+.no_l_border{
+    border-left:none !important;
+}
+.no_r_border{
+    border-right:none !important;
+}
+
+.no_top_border{
+    border-top:none !important;
+}
+.no_bottom_border{
+    border-bottom:none !important;
+}
+/*去掉右边距*/
+.no_r_margin{
+    margin-right: 0 !important;
+}
+.w100{width:100px;}
+.w110{width:110px;}
+.w120{width:120px;}
+.w130{width:130px;}
+.w200{width:200px}
+.w1200{width: 1200px;margin: auto;}
+
+#box {
+	background-color: #f6f6f6;
+	height: 80px;	
+}
+
+#box_02 {
+	background-color: #f6f6f6;
+	height: 25px;	
+}
+
+#box_03 {
+	background-color: #f6f6f6;
+	width: auto;
+	padding: 65px 0 65px 0;
+}
+#box_04 {
+	height: 25px;	
+}

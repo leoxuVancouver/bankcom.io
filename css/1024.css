@@ -1,0 +1,13 @@
+﻿/*首页轮播图区域*/
+.bannar{
+	width: 1200px;
+}
+.slideBox {
+	width: 1200px;
+}
+.bannar_fix_bg,.bannar_fix{
+	left:0;
+}
+.slideBox .prev{
+	left:310px;
+}

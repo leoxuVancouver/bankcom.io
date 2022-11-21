@@ -1,0 +1,353 @@
+﻿
+
+html,
+/*全局样式start*/
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+p,
+iframe,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+pre,
+form,
+button,
+input,
+textarea,
+th,
+td,
+a {
+  margin: 0;
+  padding: 0;
+}
+body,
+button,
+input,
+select,
+textarea {
+  font-size: 12px;
+  font-family: '宋体';
+  color: #3f3f3f;
+}
+button {
+  cursor: pointer;
+}
+
+/*全局样式end*/
+
+/*查询按钮start*/
+.search{
+		-webkit-border-radius: 4px;
+		-moz-border-radius: 4px;
+		border-radius: 4px;
+		background: #1995e6;
+		width: 46px;
+		height: 24px;
+		line-height: 22px;/*liping20151128*/
+		margin-left: 10px;
+		color: #fff;
+		font-size: 12px;
+		cursor:pointer;
+}
+.search:hover{
+            background-color: #4caceb;
+			cursor:pointer;
+}   
+.blueBtn {
+		border: 1px solid #1995e6;
+		font-family: '微软雅黑';
+}
+/*查询按钮end*/
+
+/*下拉框start  2015-12-07jww修改*/  
+.select { position: relative; width: 107px; height: 24px; padding-left: 6px; background-color: #fff; border:1px solid #ddd; color: #666; line-height: 24px;}
+.selecton { height: 25px; border-bottom: 0; }
+.select .define_input { line-height: 19px; }
+.select a { display: inline-block; float: right; width: 22px; height: 22px; background: url(../images/select_bg.jpg) no-repeat; }
+.option a{ display: block; width: 108px; height: 24px; padding-left: 5px; border: 0; line-height: 22px; color: #666; text-align: left; }
+.option a:hover { background-color: #1995e6;; color: #fff; text-decoration: none; }
+.option { display: none; position: absolute; z-index: 10; background: #fff; border: 1px solid #ddd; border-top:0;}
+.option li { clear: both; }
+/*下拉框end*/
+
+
+
+/*表格start*/
+.con {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.conTitle {
+  height: 25px;
+  width: 100%;
+  margin-top: 14px;
+  margin-bottom: 14px;
+}
+.conTitle > div {
+  display: inline-block;
+  margin-right: 22px;
+}
+.conTitle input[type='text'] {
+  width: 100px;
+  height: 20px;
+  line-height: 20px;
+  font-size: 13px;
+  border: 1px solid #ddd;
+}
+.conTitle select {
+  font-size: 12px;
+  height: 25px;
+  line-height: 25px;
+  width: 85px;
+  border-color: #ddd;
+}
+.conTable {
+  width: 957px;
+  margin-left:20px;
+  margin-top:20px;
+}
+.conTable thead tr {
+  height: 28px;
+  background: #f7f7f7;
+}
+.conTable thead tr td {
+  padding-top: 1px;
+}
+.conTable tbody tr:nth-child(2n) {
+  background: #f7f7f7;
+}
+.conTable tr {
+  height: 44px;
+  text-align: center;
+}
+.conTable tr td,
+.conTable tr th {
+  border: 1px solid #e6e6e6;
+}
+.conTable tr a {
+  margin-left: 5px;
+  margin-right: 5px;
+  color: #1995e6;
+  font-size: 12px;
+}
+.conTable tr td:nth-of-type(1) {
+  width: 235px;
+}
+.conTable tr td:nth-of-type(2) {
+  width: 75px;
+}
+.conTable tr td:nth-of-type(3) {
+  width: 75px;
+}
+.conTable tr td:nth-of-type(4) {
+  width: 60px;
+}
+.conTable tr td:nth-of-type(5) {
+  width: 120px;
+}
+.conTable tr td:nth-of-type(6) {
+  width: 160px;
+}
+.tl{
+	text-align:left;
+	}
+.sx{
+	height:10px; 
+	color:#aaa;
+	width:1px !important; 
+}
+.pl2{
+	padding-left:2px;}
+.pl7{
+	padding-left:7px;}
+.pl15{
+	padding-left:15px;
+	line-height: 18px;
+	}
+/*表格end*/
+
+/*分页start*/                /* 2015-12-01 jww注释掉 */
+/* .page {                            
+		font-size: 0px;
+		margin-top: 20px;
+		text-align: right;
+		text-align: right!important;
+		font-family: "宋体";
+}
+.pageNor {
+		border: 1px solid #ccc;
+		color: #ccc;
+		background: #fff;
+		width: 55px;
+		height: 22px;
+		line-height: 22px;
+		text-align: center;
+		display: inline-block;
+		font-size: 14px;
+		cursor: default;
+}
+.goBtn {
+		  -webkit-border-radius: 4px;
+		  -moz-border-radius: 4px;
+		  border-radius: 4px;
+		  background: #F6F6F6;
+		  border: 1px solid  #1995e6;	
+}
+.page button {
+		background:  url(../images/btn-submit-bg.png) no-repeat center center;
+		width: 36px;
+		height: 23px;
+		color: #fff;
+		font-size: 12px;
+		margin-right:20px;
+}
+.page button:hover {
+   background-color: #4caceb;
+}
+
+
+.page { height: 24px; font-size: 14px; font-family: 'SimSun'; color:#666666; text-align: center; }
+.page span,
+.page a { display: inline-block; width: 22px; height: 22px; margin: 0 0px; text-align: center; line-height: 22px; }
+.page a { border: 1px solid #ddd; color: #005bac; }
+.page span,
+.page a:hover { background-color: #ffe7d8; border: 1px solid #ff6d10; color: #ff6d10; text-decoration: none; }
+.page a#prev,
+.page a#next { width: 56px; height: 22px; }
+.page a#prev.nor,
+.page a#next.nor,
+.page a#prev.nor:hover,
+.page a#next.nor:hover { background-color: #fff; border: 1px solid #ccc; color: #e5e5e5; cursor: default; text-decoration: none; }
+.page em { margin-right: 2px; font-style: normal; }
+.page .all {margin-left: 3px;margin-right: 2px;}
+.page .input_page { width: 22px; height: 22px; padding:0; border: 1px solid #ccc; color: #1e8de2; text-align: center; line-height: 22px;margin-right: 1px;}
+.page .btn_queding{ width: 46px; height: 24px; margin-left: 4px; padding:0; background: url(images/btn-submit-bg.png) no-repeat; border: 0; cursor: pointer; text-align: center; color:#fff; font-size: 12px; line-height: 24px; } */
+
+/*分页end*/
+
+/*名单DIVstart*/
+.pdb_md{
+	width:100%;
+	float:left
+		
+	}
+.daixuan{
+	float: left;
+	width: 440px;
+	margin-right: 16px;
+	border: 1px solid #ddd;
+/*	overflow: hidden;
+	overflow-y: auto;*/
+	margin-left:20px;
+	margin-top:20px;
+	height:420px;
+	}
+.daixuan li{
+	height:24px;
+	padding-left:20px;
+	text-align:left;
+	font-size:12px;
+	line-height:25px;
+	cursor:pointer;}
+.daixuan li:hover{
+	background-color: #1995e6;
+    color: #fff;
+	cursor:pointer;
+	}
+.on{
+	background-color: #1995e6;
+    color: #fff;
+}
+.jiantou{
+	float: left;
+	width: 60px;
+	height: 175px;
+	}
+.jiantou img{
+	margin-top:160px;}
+.yixuan{
+	float: left;
+	width: 440px;
+	border: 1px solid #ddd;
+/*	overflow: hidden;
+	overflow-y: auto;*/
+	margin-top:20px;
+	height:420px;
+	}
+.yixuan li{
+	height:24px;
+	padding-left:20px;
+	text-align:left;
+	font-size:12px;
+	line-height:25px;
+	cursor:pointer;
+	}
+.yixuan li:hover{
+	background-color: #1995e6;
+    color: #fff;
+	cursor:pointer;
+	}
+.wenzi{
+	height:10px;
+	padding-top:20px;
+	}
+.daixuan_1{
+	font-size:14px;
+	padding-left:20px;
+	}
+.yixuan_1{
+	font-size:14px;
+	padding-left:458px;
+	}
+/*名单DIVend*/
+
+/*删除start*/
+.delete a{
+	position:absolute;
+	right:8%;
+	text-align:right !important;color:#fff}
+.delete a:hover{color:#fff;}
+/*删除end*/
+
+.zggj_2{
+	display:none;
+	}
+	
+.fa_dialog {
+display: none;
+position: fixed;
+top: 50%;
+left: 50%;
+width: 440px;
+height: 240px;
+margin: -120px 0 0 -220px;
+background-color: #fff;
+z-index: 999;
+font-family: 'Microsoft YaHei';
+z-index: 3;
+}
+
+.conTable_2 tr td:nth-of-type(2) {
+width: 80px;
+}
+.conTable_2 tr td:nth-of-type(3) {
+width: 90px;
+}
+.conTable_2 tr td:nth-of-type(4) {
+width: 90px;
+}
+.conTable_2 tr td:nth-of-type(5) {
+width: 90px;
+}
+.conTable_2 tr td:nth-of-type(6) {
+width: 110px;
+}
