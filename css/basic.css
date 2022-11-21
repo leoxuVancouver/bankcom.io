@@ -1,0 +1,207 @@
+﻿  /*
+ --------------------------------------------------------------------
+  site:				中国建设银行-个人网银原型-基础样式
+  author:			广州时代财富科技有限公司
+  updated:		2014年02月
+  updated by:   Randy
+  --------------------------------------------------------------------
+*/
+
+@charset "utf-8";
+/* CSS Document */
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,input,textarea,p,th,td { 
+	margin:0;
+	padding:0;
+}
+body{
+	behavior:url("csshover.htc");/*Whatever:hover插件，实现所有浏览器下所有元素的hover效果*/
+    font-size:12px;
+	font-family:"宋体",Tahoma;
+	color:#333333;
+	background-color:#FFFFFF;} 
+img { 
+	border:0;}
+ol,ul {
+	list-style:none;}
+a{outline:none;
+   color:#333333;
+   text-decoration:none;
+   cursor:pointer;
+   font-weight:normal;}
+a:hover{
+	color:#ff6600;
+	text-decoration: underline;}
+
+.left{
+	clear:none;
+	float:left;}
+.right{
+	clear:none;
+	float:right;}
+.clear{
+	clear:both;}
+.block{
+	display:block;}
+h1{}
+h2{
+	clear:left;
+	font-size:12px;
+	font-weight:bold;
+	color:#0066B3;
+	line-height:12px;
+	padding:11px 0 7px 0;
+	width:auto;
+	overflow:hidden;
+	margin-bottom:7px;
+	}
+h3{
+	font-size:12px;
+	font-weight:bold;
+	color:#000000;
+	line-height:40px;
+	width:auto;
+	overflow:hidden;
+	padding-left:15px;}
+h4{
+	font-size:12px;
+	font-weight:bold;
+	color:#000000;
+	line-height:32px;
+	margin-top:5px;
+	padding:0px 9px;
+	background:url(../images/sidebar_title.gif) no-repeat;
+	background-position-y:top;
+	background-position-x:-1px;}
+h5{
+	/*边栏区营销模块标题样式*/
+	font-size:12px;
+	font-weight:bold;
+	color:#090;
+	line-height:28px;}
+p {
+	line-height:22px;
+	}
+b {
+	margin:0px;
+	}
+strong{
+	display:block;
+	line-height:22px;
+	height:30px;}
+strong a{
+	font-weight:normal;
+	text-decoration:none;}
+strong span{
+	font-weight:normal;
+	color:#BB2200;}
+.red{
+	color:#fd0100;}
+.blue{
+	color:#005ca7;}
+.lblue{
+	color:#13a1ed ;}
+.blblue{
+	color:#13a1ed ;
+	font-weight:bold;
+	
+	}
+.orange{
+color:#ff6600;
+}
+.white{
+	color:#FFFFFF;}
+.black{
+	color:#000000;}
+.lgrey{
+color:#9c9c9c;
+}
+form{
+	margin:0px;}
+
+.ml1{margin-left:1px;}
+.mr1{margin-right:1px;}
+.mt5{margin-top:5px;}
+.mb5{margin-bottom:5px;}
+.ml5{margin-left:5px;}
+.mr5{margin-right:5px;}
+.mh5{margin:0px 5px;}
+.mv5{margin:5px 0px;}
+.m5{margin:5px;}
+.mt10{margin-top:10px;}
+.mb10{margin-bottom:10px;}
+.ml10{margin-left:10px;}
+.mr10{margin-right:10px;}
+.mh10{margin:0px 10px;}
+.mv10{margin:10px 0px;}
+.m10{margin:10px;}
+.pt5{padding-top:5px;}
+.pb5{padding-bottom:5px;}
+.pl5{padding-left:5px;}
+.pr5{padding-right:5px;}
+.ph5{padding:0px 5px;}
+.pv5{padding:5px 0px;}
+.p5{padding:5px;}
+.pt10{padding-top:10px;}
+.pb10{padding-bottom:10px;}
+.pl10{padding-left:10px;}
+.pr10{padding-right:10px;}
+.ph10{padding:0px 10px;}
+.pv10{padding:10px 0px;}
+.p10{padding:10px;}
+
+.dis-none{ display:none;}
+.w80{width:80px !important;}
+.inputStyle{text-align:left !important;;text-indent:0.5em !important;}
+ /*<---2015.12.7开始--->*/
+#footer_box{
+    width:100%;
+    background: #f6f6f6;
+    border-top: 1px solid #e8e8e8;
+    content: "";
+}
+.setMap_item{
+    width: 239px;
+    border-right: 1px solid #e8e8e8;
+    list-style: none;
+    float: left;
+    overflow: hidden;
+}
+.footer_site_info{
+    width: 100%;
+    height: 174px;/*90px*/
+    margin: auto;
+	background: #f6f6f6;
+}
+.footer_info{
+    font-family: 'arial';
+    width: 550px;
+    height: 12px;
+    line-height: 12px;
+	text-align:center;
+	margin:0 auto;
+	padding-bottom:10px;
+    color: #999999;/
+}
+.footer_nav{
+	text-align:center;
+	padding-top:30px;
+	padding-bottom:10px;
+    position: relative;
+	color:#999999;
+    width: 680px;
+	margin:0 auto;
+	font-family:‘宋体’;
+    list-style: none;
+}
+.footer_img{width:160px;height:40px;margin:0 auto;}/*<2015.12.7>*/
+.icon_left{margin:7px 10px;}
+.gray{
+    color:#999999;
+	font-family:'宋体';
+	margin-right:20px;}
+.footer_nav a{color:#999999;
+	font-family:'宋体';}
+.footer_nav a:hover{color:#ff6600;
+                    font-style:underline;}	
+	/*<---2015.12.7结束--->*/
+

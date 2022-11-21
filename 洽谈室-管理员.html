@@ -1,0 +1,446 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="css/qts_admin.css"/>
+<link href="css/contain.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/jquery-1.8.2.min.js"></script>
+<script type="text/javascript" src="js/plugin.dragula.min.js"></script>
+<title>在线洽谈室</title>
+<style type="text/css">
+.gu-mirror {
+  position: fixed !important;
+  margin: 0 !important;
+  z-index: 9999 !important;
+}
+.gu-hide {
+  display: none !important;
+}
+.gu-unselectable {
+  -webkit-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  user-select: none !important;
+}
+.gu-transit {     /*拖拽对象本体*/
+  opacity: 0.2;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+  filter: alpha(opacity=20);
+}
+.gu-mirror {      /*拖拽对象镜像*/
+  opacity: 0.8;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+  filter: alpha(opacity=80);
+  cursor:move;
+}
+
+.clearfix{ *zoom:1}
+.clearfix:before,
+.clearfix:after{ display:table; line-height:0; content:""}
+.clearfix:after{ clear:both;}
+
+/*#single1{
+  background:#ddd;}
+#single1 p{
+  width:300px;
+  height:30px;
+  background:red;
+  margin:10px;
+  cursor: move;
+  cursor: grab;
+  cursor: -moz-grab;
+  cursor: -webkit-grab;
+  transition: all 0.4s ease-in-out;
+  float:left;
+}*/
+</style>
+	<style>
+	.btn_show_pop { display: inline-block; width: 88px; height: 28px; background-color: #1995e6; border: 1px solid #1995e6; color: #fff; font-size: 14px; text-align: center; line-height: 30px; cursor: pointer; }
+	.btn_show_pop:hover { background-color: #4eadeb; border: 1px solid #4eadeb; }
+
+	/*fa_dialog*/
+	.mask { display: none; position: absolute; top: 0; left: 0; z-index: 2; opacity: 0.5; filter: alpha(opacity=50); background-color: #000; width:100%; height:100%; }
+	.fa_dialog { display: none; position: fixed; top: 50%; left: 50%; width: 440px; height: 240px; margin: -120px 0 0 -220px; background-color: #fff; z-index: 999; font-family: 'Microsoft YaHei'; z-index: 3; }
+	.fa_dialog .fa_dialog_con { height: 156px; vertical-align: middle; font-size: 18px; font-weight: 400; color: #000;  }
+	.fa_dialog table { width: 440px; height: 240px; }
+	.fa_dialog table th { position: relative; height: 40px; background-color: #1995e6; font: 400 16px/40px 'Microsoft YaHei'; text-indent: 10px; color: #fff; text-align: left; }
+	.fa_dialog table th .fa_close { position: absolute; top: 8px; right: 10px; width: 24px; height: 24px; background: url(images/fa_dialog/icon_fa_close.jpg) no-repeat; cursor: pointer; text-indent: -999em; }
+	.fa_dialog table tbody td { text-align: center; font-size: 18px; font-weight: 400; }
+	.fa_dialog table tbody td h3 { margin-bottom: 10px; font: 400 18px/32px 'Microsoft YaHei'; }
+	.fa_dialog table tbody td h3 img { vertical-align: top;}
+	.fa_dialog table tbody td p { font-size: 14px; font-weight: 400; }
+	.fa_dialog table img { width: 32px; height: 32px; margin-right: 10px; vertical-align: middle; } 
+	.fa_dialog table tfoot td { height: 44px; background-color: #f0f0f0; border: 0; text-align: center; }
+	.fa_dialog table tfoot td .btn_fa_confirm,
+	.fa_dialog table tfoot td .btn_fa_cancel { width: 90px; height: 30px; background-image: url(images/btn-all-bg.png); background-repeat: no-repeat; border: 0; font: 400 14px/30px 'Microsoft YaHei'; color: #fff; text-align: center; cursor: pointer; }
+	.fa_dialog table tfoot td .btn_fa_confirm { background-position: 0 -581px; color: #fff; }
+	.fa_dialog table tfoot td .btn_fa_confirm:hover { background-position: -300px -581px; }
+	.fa_dialog table tfoot td .btn_fa_cancel { margin-left: 7px; background-position: 0 -663px; color: #1995e6; }
+	.fa_dialog table tfoot td .btn_fa_cancel:hover { background-position: -300px -663px; }
+	/*wsw 2015-11-28*/
+	.fa_dialog table{border-spacing: 0px;}
+	.fa_dialog .fa_dialog_content{float:left; text-align:left; margin-left:40px; width:360px; color:#333;}
+	.fa_dialog .fa_dialog_content dl dt{padding-bottom:10px; border-bottom:1px dashed #ccc; margin-bottom:20px; margin-top:4px;}
+	.fa_dialog .fa_dialog_content dl dd{font-size:14px; word-break:break-all}
+	.main_left_btn span a.qtq-hit{ background:#ccc; cursor:default;}
+	</style>
+</head>
+<body>
+<div class="container">
+  <div class="large_div">
+     <!--顶部-->  
+     <div class="top">
+        <a class="back_btn">       
+        </a>
+    </div>
+     <!--顶部-->  
+     <!--中间部分-->
+     <div class="main clearfix">
+        <div class="main_left">
+          <div class="main_left_talk">
+            <ul class="main_left_talk_tab">
+              <li class="hit">会议大厅</li>
+              <li id="qtq">洽谈区</li>
+              <li>主办企业</li>
+            </ul>
+            <div class="main_left_talk_con">      
+              <li class="hit"></li>
+              <div class="con" style="display:block; overflow-y:scroll; width:643px; height: 287px;">
+              <p style="font-size:12px;color:#5a5a5a" class="margin_btm">  管理员您好，本场洽谈会的洽谈时间为 09:00-11:00 请协调好洽谈时长！
+              </p>
+        
+                  <p style="color:#053B71">丽水市亿盛皮革有限公司 <span class="meeting_time">(2015-12-05 08:57:56)</span></p>
+                  <p class="margin_btm">大家好！非常荣幸参加在线洽谈！</p>
+                  <p style="color:red" class="margin_btm">【系统提示】内蒙古东达羊绒制品有限公司，请进入洽谈区，洽谈马上开始！</p>
+                  <p><span style="color:#053B71">辛集市斯宾赛服饰贸易有限公司</span> <span class="meeting_time">(2015-12-05 08:59:09)</span></p>
+                  <p class="margin_btm">非常期待与主办方的洽谈！</p>
+				  <p><span style="color:#053B71">福建婉曦服饰发展有限公司</span> <span class="meeting_time">(2015-12-05 08:59:11)</span></p>
+                  <p class="margin_btm">希望能和主办方合作愉快</p>
+				  <p><span style="color:#053B71">厦门优得进出口有限公司</span> <span class="meeting_time">(2015-12-05 08:59:12)</span></p>
+                  <p class="margin_btm">很荣幸能参加这次洽谈会</p>
+				  <p><span style="color:#053B71">福建六维实业有限公司</span> <span class="meeting_time">(2015-12-05 08:59:42)</span></p>
+                  <p class="margin_btm">大家好！非常荣幸能参加本次洽谈会。</p>
+                  <p style="color:red" class="margin_btm">【系统提示】内蒙古东达羊绒制品有限公司，请进入洽谈区，洽谈马上开始！</p>                  
+                  <p><span style="color:#053B71">尼亚拉服装皮革有限公司</span> <span class="meeting_time">(2015-12-05 08:59:56)</span>
+				  <p class="margin_btm">欢迎各位参与本次洽谈会！</p>
+              </div>
+              <div class="con"><p style="color:red" class="margin_btm">【系统提示】洽谈会将于09:00正式开始，请耐心等候。</p></div>
+				<div class="con">
+					<p style="color:#053B71">尼亚拉服装皮革有限公司 <span class="meeting_time">(2015-12-05 08:57:42)</span></p>
+					<p class="margin_btm">你好</p>
+					<p class="p-r"><span style="color:#053B71">管理员</span> <span class="meeting_time">(2015-12-05 08:57:56)</span></p>
+					<p class="margin_btm p-r">您好！有什么可以为您服务？</p>
+					<p style="color:#053B71">尼亚拉服装皮革有限公司 <span class="meeting_time">(2015-12-05 08:58:23)</span></p>
+					<p class="margin_btm">为什么在洽谈区无法发送内容，“发送”按钮是灰色的？</p>
+					<p class="p-r"><span style="color:#053B71">管理员</span> <span class="meeting_time">(2015-12-05 08:58:56)</span></p>
+					<p class="margin_btm p-r">您好！洽谈会还未到开始时间，请耐心等候。09:00洽谈会将正式开始。</p>
+				</div>
+            </div>
+          </div>
+          <div class="main_left_xiaoxi"></div>
+          <div class="main_left_fasong"><textarea name="content" cols="93" rows="5" style="border:0px; width:669px;"></textarea></div> 
+          <div class="main_left_btn">
+            <span><a href="javascript:void(0);" id="qtqa">发送</a></span>
+          </div>         
+        </div>
+        <div class="main_right">
+          <div class="main_right_up">
+            <p class="title">洽谈会信息</p>
+            <div class="content">
+                <h3>尼亚拉服装长期采购皮革服装制品</h3>
+                <p>采购金额：320万元</p>
+                <p>洽谈时间：09:00-11:00</p>
+                <p>主办企业：尼亚拉服装皮革有限公司</p>
+            </div>
+          </div>
+          <div class="main_right_down">
+             <p class="title" style="margin-bottom:2px">参会企业</p>
+             <div class="list_box list_box_1 clearfix">
+                <dl class="top_dl">
+                  <dt class="list_box_title list_box_title_2">内蒙古东达羊绒制品有限公司</dt>
+                  <dd class="num_txt"></dd>
+                  <dd class="slide_btn"></dd>
+                  <dd class="litle_menu litle_menu_2">
+                      <!--<div class="item1 hui">置顶</div>-->
+                      <div class="item2">禁止发言</div>
+                      <div class="item3">结束洽谈</div>
+                  </dd>
+                </dl>
+                <div class="slide_cont" style="display:block">
+                    <div class="clearfix" style="height:auto">
+                      <p style="float:left;padding-right:0">联系人:张天</p>
+                      <p style="float:right;padding-right:0">联系电话:13902883768</p>
+                    </div>
+                    <p style="width:210px">企业简介：内蒙古东达蒙古王集团是在1991年创建的东达羊绒制品公司基础上，于1996年4月组建...<a href="dongda.html" target="_blank" class="detail">&gt;&gt;详情</a></p>
+                </div>
+                <dl>
+                  <dt class="list_box_title list_box_title_1 dt_text_1">丽水市亿盛皮革有限公司</dt>
+                  <dd class="num_txt">1</dd>
+                  <dd class="slide_btn"></dd>
+                  <dd class="litle_menu litle_menu_2">
+                      <div class="item1" style="background: url(images/qts_ico_1_gray.png) 10px 8px no-repeat;">置顶</div>
+                      <div class="item2">禁止发言</div>
+                      <!--<div class="item3 hui">结束洽谈</div>-->
+                  </dd>
+                </dl>
+                <div class="slide_cont">
+                    <div class="clearfix" style="height:auto">
+                      <p style="float:left;padding-right:0">联系人:张帅</p>
+                      <p style="float:right;padding-right:0">联系电话:18609751607</p>
+                    </div>
+                    <p class="company_detail_2" style="width:210px">企业简介：丽水市亿盛皮革有限公司位于江苏省镇江市丹徒区宝堰镇(镇荣公路边),风景秀丽，交通...<a href="javascript:void(0);" class="detail">&gt;&gt;详情</a></p>
+                </div>               
+                <dl>
+                  <dt class="list_box_title list_box_title_1 dt_text_2">福建天发革业有限公司</dt>
+                  <dd class="num_txt">2</dd>
+                  <dd class="slide_btn"></dd>
+                  <dd class="litle_menu litle_menu_2">
+                      <div class="item1 top_btn">置顶</div>
+                      <div class="item2">禁止发言</div>
+                      <!--<div class="item3 hui">结束洽谈</div>-->
+                  </dd>
+                </dl>
+                <div class="slide_cont">
+                    <div class="clearfix" style="height:auto">
+                      <p style="float:left;padding-right:0">联系人:李晓</p>
+                      <p style="float:right;padding-right:0">联系电话:13401751657</p>
+                    </div>
+                    <p class="company_detail_2" style="width:210px">企业简介：福建天发革业有限公司成立于1997年，公司位于福州华林路84号福建日报大厦...<a href="javascript:void(0);" class="detail">&gt;&gt;详情</a></p>
+                </div>
+                <dl>
+                  <dt class="list_box_title list_box_title_1">辛集市斯宾赛服饰贸易有限公司</dt>
+                  <dd class="num_txt">3</dd>
+                  <dd class="slide_btn"></dd>
+                  <dd class="litle_menu litle_menu_2">
+                      <div class="item1">置顶</div>
+                      <div class="item2">禁止发言</div>
+                      <!--<div class="item3 hui">结束洽谈</div>-->
+                  </dd>
+                </dl>
+                <div class="slide_cont">
+                    <div class="clearfix" style="height:auto">
+                      <p style="float:left;padding-right:0">联系人:李晓玲</p>
+                      <p style="float:right;padding-right:0">联系电话:18801751517</p>
+                    </div>
+                    <p style="width:210px">企业简介：辛集市斯宾赛服饰贸易有限公司是一家集设计、生产、销售为一体的实业公司。公司拥有雄厚...<a href="javascript:void(0);" class="detail">&gt;&gt;详情</a></p>
+                </div>
+                <dl>
+                  <dt class="list_box_title list_box_title_1 list_box_title_3">大洋（漳州）皮业有限公司</dt>
+                  <dd class="num_txt">4</dd>
+                  <dd class="slide_btn"></dd>
+                  <dd class="litle_menu litle_menu_2">
+                      <div class="item1">置顶</div>
+                      <div class="item2">禁止发言</div>
+                      <!--<div class="item3 hui">结束洽谈</div>-->
+                  </dd>
+                </dl>
+                <div class="slide_cont">
+                    <div class="clearfix" style="height:auto">
+                      <p style="float:left;padding-right:0">联系人:张帅</p>
+                      <p style="float:right;padding-right:0">联系电话:15101751467</p>
+                    </div>
+                    <p style="width:210px">企业简介：大洋（漳州）皮业有限公司是从香港引入的一个英伦商务男装品牌，代表了英国知识分子...<a href="javascript:void(0);" class="detail">&gt;&gt;详情</a></p>
+                </div>
+             </div>
+             <div class="list_box list_box_2 clearfix" style="display:none">
+                <dl class="top_dl">
+                  <dt class="list_box_title list_box_title_2" style="color:#666">福建一品豹服饰发展有限公司</dt>
+                  <dd class="num_txt">5</dd>
+                  <dd class="slide_btn"></dd>
+                  <dd class="litle_menu litle_menu_2">
+                      <div class="item1">置顶</div>
+                      <div class="item2">禁止发言</div>
+                      <!--<div class="item3 hui">结束洽谈</div>-->
+                  </dd>
+                </dl>
+                <div class="slide_cont" style="display:block">
+                    <div class="clearfix" style="height:auto">
+                      <p style="float:left;padding-right:0">联系人:李晓红</p>
+                      <p style="float:right;padding-right:0">联系电话:15401251607</p>
+                    </div>
+                    <p style="width:210px">企业简介：福建一品豹服饰发展有限公司是皮草服饰、女包等产品专业生产加工的公司，拥有完... <a href="javascript:void(0);" class="detail">&gt;&gt;详情</a></p>
+                </div>
+                <dl>
+                  <dt class="list_box_title list_box_title_1">厦门优得进出口有限公司</dt>
+                  <dd class="num_txt">6</dd>
+                  <dd class="slide_btn"></dd>
+                  <dd class="litle_menu litle_menu_2">
+                      <div class="item1">置顶</div>
+                      <div class="item2">禁止发言</div>
+                      <!--<div class="item3 hui">结束洽谈</div>-->
+                  </dd>
+                </dl>
+                <div class="slide_cont">
+                    <div class="clearfix" style="height:auto">
+                      <p style="float:left;padding-right:0">联系人:何小姐</p>
+                      <p style="float:right;padding-right:0">联系电话:13679051601</p>
+                    </div>
+                    <p style="width:210px">企业简介：厦门优得进出口有限公司主要生产经典、时尚的各种皮草皮衣服装,采用先进参会企业...<a href="javascript:void(0);" class="detail">&gt;&gt;详情</a></p>
+                </div>
+                <dl>
+                  <dt class="list_box_title list_box_title_1">福建婉曦服饰发展有限公司</dt>
+                  <dd class="num_txt">7</dd>
+                  <dd class="slide_btn"></dd>
+                  <dd class="litle_menu litle_menu_2">
+                      <div class="item1">置顶</div>
+                      <div class="item2">禁止发言</div>
+                      <!--<div class="item3 hui">结束洽谈</div>-->
+                  </dd>
+                </dl>
+                <div class="slide_cont">
+                    <div class="clearfix" style="height:auto">
+                      <p style="float:left;padding-right:0">联系人:肖先生</p>
+                      <p style="float:right;padding-right:0">联系电话:18401751651</p>
+                    </div>
+                    <p style="width:210px">企业简介：福建婉曦服饰发展有限公司，公司成立于一九九五年，座落于中国东南沿海经济繁荣的...<a href="javascript:void(0);" class="detail">&gt;&gt;详情</a></p>
+                </div>
+                <dl>
+                  <dt class="list_box_title list_box_title_1">泉州市海天心进出口有限公司</dt>
+                  <dd class="num_txt">8</dd>
+                  <dd class="slide_btn"></dd>
+                  <dd class="litle_menu litle_menu_2">
+                      <div class="item1">置顶</div>
+                      <div class="item2">禁止发言</div>
+                      <!--<div class="item3 hui">结束洽谈</div>-->
+                  </dd>
+                </dl>
+                <div class="slide_cont">
+                    <div class="clearfix" style="height:auto">
+                      <p style="float:left;padding-right:0">联系人:朱先生</p>
+                      <p style="float:right;padding-right:0">联系电话:18201771516</p>
+                    </div>
+                    <p style="width:210px">企业简介：泉州市海天心进出口有限公司位于中国皮衣皮革之都——河北省辛集市，是一家...<a href="javascript:void(0);" class="detail">&gt;&gt;详情</a></p>
+                </div>
+                <dl>
+                  <dt class="list_box_title list_box_title_1 list_box_title_3">福建六维实业有限公司</dt>
+                  <dd class="num_txt num_txt_g"></dd>
+                  <dd class="slide_btn"></dd>
+                  <dd class="litle_menu litle_menu_2">
+                      <div class="item1">置顶</div>
+                      <div class="item2">禁止发言</div>
+                      <!--<div class="item3 hui">结束洽谈</div>-->
+                  </dd>
+                </dl>
+                <div class="slide_cont">
+                    <div class="clearfix" style="height:auto">
+                      <p style="float:left;padding-right:0">联系人:莫小姐</p>
+                      <p style="float:right;padding-right:0">联系电话:15801751464</p>
+                    </div>
+                    <p style="width:210px">企业简介：福建六维实业有限公司是在1997年创建的荣成市玉兔牧业有限公司的基础上，于...<a href="javascript:void(0);" class="detail">&gt;&gt;详情</a></p>
+                </div>
+             </div>
+            <div class="lists_btn">
+                  <a href="javascript:;" class="pre-ico" style="float:left"></a>
+                  <div style="line-height:10px;float:left;margin:0 5px">
+                    <a href="javascript:;" class="one on">1</a>
+                    <a href="javascript:;" class="tow">2</a>
+                    <span>...</span>
+                    <a href="javascript:;">10</a>                   
+                  </div>
+                  <a href="javascript:;" class="next-ico" style="float:left"></a>
+            </div>
+          </div>
+        </div>
+     </div>
+  </div>
+</div>     
+    <!--中间部分-->
+        <!--弹窗-->
+<div class="mask" style="display:none;z-index:99999999"></div>
+<div id="pop1" class="fa_dialog" style="display:none;">
+	<table>
+		<thead>
+			<tr>
+				<th>提示<span class="fa_close">X</span></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>
+					<div class="fa_dialog_content">
+                    	<dl>
+                        	<dt><img src="images/icon_fa_question.jpg">确认退出洽谈室？</dt>
+                            <dd>本场洽谈会结束后将不能再次进入洽谈室，如需查看聊天记录，请在洽谈会结束前作好保存。</dd>
+                        </dl>
+                    </div>
+				</td>
+			</tr>
+		</tbody>
+		<tfoot>
+			<tr>
+				<td>
+					<input type="button" class="btn_fa_confirm" value="确认">
+					<input type="button" class="btn_fa_cancel" value="取消">
+				</td>
+			</tr>
+		</tfoot>
+	</table>
+</div>
+</div>
+</body>
+</html>
+<script type="text/javascript">
+    /*tab标签 start*/
+    $('.main_left_talk_tab li').click(function(){
+      $(this).addClass('hit').siblings().removeClass('hit');
+      $('.main_left_talk_con>div:eq('+$(this).index()+')').show().siblings().hide(); 
+	  $("#qtqa").removeClass('qtq-hit');
+    });
+	 $('#qtq').click(function(){
+      $("#qtqa").addClass('qtq-hit');
+    });
+    /*tab标签 end*/
+
+  /*展开收起*/
+
+$('.list_box_title').click(function(){
+     $(this).parent().next('.slide_cont').slideDown(500).siblings('.slide_cont').slideUp(500);
+});
+
+$('.list_box_title_2')
+$('.slide_btn').click(function(e){
+  $(this).siblings('.litle_menu').show();
+  e.stopPropagation(); 
+  $(this).parent().css('zIndex','9999');
+  $(this).parent().siblings('dl').css('zIndex','999');
+  $(this).parent().siblings('dl').find('.litle_menu').hide();
+});
+$(document).click(function(){
+  $('.litle_menu').hide();
+})
+
+/*翻页*/
+$('.lists_btn .tow,.next-ico').click(function(){
+      $('.one').removeClass('on').siblings('.tow').addClass('on');
+  $('.list_box_2').show();
+  $('.list_box_1').hide();
+  $('.pre-ico').addClass('next-ico-btn-l');
+})
+$('.lists_btn .one,.pre-ico').click(function(){
+   $('.list_box_1').show();  
+   $('.list_box_2').hide();  
+   $('.lists_btn .one').addClass('on').siblings().removeClass('on');
+  $('.pre-ico').removeClass('next-ico-btn-l');
+})
+
+$('.top_btn').click(function(){
+  $('.dt_text_1').html('福州鑫恒隆皮革制品有限公司');
+  $('.dt_text_2').html('镇江金特服饰有限公司');
+  $('.company_detail_1').html('企业简介：  福州鑫恒隆皮革制品有限公司成立于1997年，公司位于福州华林路84号福建日报大厦...')
+  $('.company_detail_2').html('企业简介：镇江金特服饰有限公司位于江苏省镇江市丹徒区宝堰镇(镇荣公路边),风景秀丽，交通...')
+
+})
+  //退出
+$('.back_btn').click(function(){
+	$('#pop1').show();
+	$(".mask").css({ display: "block", height: $(document).height() });
+});
+$('.btn_fa_confirm,.btn_fa_cancel,.fa_close').click(function(){
+	$('#pop1').hide();
+	$('.mask').hide();
+})
+$('.btn_fa_confirm').click(function(){
+	$('.container').hide();
+	window.close();
+})
+</script>

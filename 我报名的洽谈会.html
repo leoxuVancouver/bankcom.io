@@ -1,0 +1,884 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="../favicon.ico" rel="icon" type="image/x-icon" />
+<title>我报名的洽谈会</title>
+<link href="css/basic.css" rel="stylesheet" type="text/css" />
+<link href="css/public.css" rel="stylesheet" type="text/css" />
+<link href="css/swzx_style.css" rel="stylesheet" type="text/css" />
+<link href="css/contain.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="css/qt_list.css"/>
+<script src="js/jquery-1.8.2.min.js"></script>
+<script src="js/js.js"></script>
+<script type="text/javascript" src="js/demoData.js"></script>
+<script type="text/javascript" src="data_nyr/js/laydate.js"></script>
+<script type="text/javascript" src="js/fa.cors.js"></script>
+<script type="text/javascript" src="js/brush.js"></script>
+<script type="text/javascript" src="js/clipboard.js"></script>
+<style>
+	.btn_show_pop { display: inline-block; width: 88px; height: 28px; background-color: #1995e6; border: 1px solid #1995e6; color: #fff; font-size: 14px; text-align: center; line-height: 30px; cursor: pointer; }
+	.btn_show_pop:hover { background-color: #4eadeb; border: 1px solid #4eadeb; }
+
+	/*fa_dialog*/
+	.mask { display: none; position: absolute; top: 0; left: 0; z-index: 2; opacity: 0.5; filter: alpha(opacity=50); background-color: #000; width:100%; height:100%; }
+	.fa_dialog { display: none; position: fixed; top: 50%; left: 50%; width: 440px; height: 240px; margin: -120px 0 0 -220px; background-color: #fff; z-index: 999; font-family: 'Microsoft YaHei'; z-index: 3; }
+	.fa_dialog .fa_dialog_con { height: 156px; vertical-align: middle; font-size: 18px; font-weight: 400; color: #000;  }
+	.fa_dialog table { width: 440px; height: 240px; border-spacing:0; }
+	.fa_dialog table th.title1 { position: relative; height: 40px; background-color: #1995e6; font: 400 16px/40px 'Microsoft YaHei'; text-indent: 10px; color: #fff; text-align: left; }
+	.fa_dialog table th .fa_close { position: absolute; top: 8px; right: 10px; width: 24px; height: 24px; background: url(images/fa_dialog/icon_fa_close.jpg) no-repeat; cursor: pointer; text-indent: -999em; }
+	.fa_dialog table tbody td { text-align: center; font-size: 18px; font-weight: 400; }
+	.fa_dialog table tbody td h3 { margin-bottom: 10px; font: 400 18px/32px 'Microsoft YaHei'; }
+	.fa_dialog table tbody td h3 img { vertical-align: top;}
+	.fa_dialog table tbody td p { font-size: 14px; font-weight: 400; }
+	.fa_dialog table img { width: 32px; height: 32px; margin-right: 10px; vertical-align: middle; } 
+	.fa_dialog table tfoot td { height: 44px; background-color: #f0f0f0; border: 0; text-align: center; }
+	.fa_dialog table tfoot td .btn_fa_confirm,
+	.fa_dialog table tfoot td .btn_fa_cancel { width: 90px; height: 30px; background-image: url(images/btn-all-bg.png); background-repeat: no-repeat; border: 0; font: 400 14px/30px 'Microsoft YaHei'; color: #fff; text-align: center; cursor: pointer; }
+	.fa_dialog table tfoot td .btn_fa_confirm { background-position: 0 -581px; color: #fff; }
+	.fa_dialog table tfoot td .btn_fa_confirm:hover { background-position: -300px -581px; }
+	.fa_dialog table tfoot td .btn_fa_cancel { margin-left: 7px; background-position: 0 -663px; color: #1995e6; }
+	.fa_dialog table tfoot td .btn_fa_cancel:hover { background-position: -300px -663px; }
+	/*wsw 2015-11-28*/
+	.fa_dialog table{border-spacing: 0px;}
+	.fa_dialog .fa_dialog_content{float:left; text-align:left; margin-left:40px; width:360px; color:#333;}
+	.fa_dialog .fa_dialog_content dl dt{padding-bottom:10px; border-bottom:1px dashed #ccc; margin-bottom:20px; margin-top:4px;}
+	.fa_dialog .fa_dialog_content dl dd{font-size:14px; word-break:break-all}
+	
+	/*评价等级 START*/
+	.stars {
+		margin-bottom: 5px;
+		height: auto;
+		overflow: hidden;
+	}
+	.stars p:last-child{
+		text-align: center;
+		letter-spacing: 5px;
+		color: #999;
+		line-height: 16px;
+		font-size: 24px;
+	}
+	.rating {
+		position: relative;
+		width: 136px;
+		height: 16px;
+		overflow: hidden;
+		margin: 0 10px 0 0;
+		padding: 0;
+		background-position: top left;
+	}
+	.feed_text{
+		font-size: 24px;
+		letter-spacing: 5px;
+		padding: 10px;
+	}
+	.rating,.rating a:hover,.rating .current {
+		background: url(images/star.png) top left no-repeat;
+	}
+	.rating li {
+		display: inline;
+	}
+	.rating a,.rating .current{
+		position: absolute;
+		top: 0;
+		left: 0;
+		text-indent: -9000px;
+		height: 20px;
+		line-height: 16px;
+		outline: none;
+		overflow: hidden;
+		border: none;
+		font-size: 16px;
+	}
+	
+	.rating a:hover {
+		background-position: left bottom;
+	}
+	.rating .selected {
+		background-position: left bottom;
+	}
+	
+	.rating .rate1 {
+		width: 20%;
+		z-index: 6;
+	}
+	.rating .rate2 {
+		width: 40%;
+		z-index: 5;
+	}
+	.rating .rate3 {
+		width: 60%;
+		z-index: 4;
+	}
+	.rating .rate4 {
+		width: 80%;
+		z-index: 3;
+	}
+	.rating .rate5 {
+		width: 100%;
+		z-index: 2;
+	}
+	.rating .current {
+		z-index: 1;
+		margin: 0;
+		padding: 0;
+		background-position: left top;
+	}
+	.haschecked {
+		background: url(images/star.png) left bottom;
+	}
+	
+	.stars span{ margin-left: 26px; font-size: 14px;}
+	.fl{ float: left;}
+	
+	.rated{height:20px; width:197px; display:inline-block; background: url(images/star.png) bottom left no-repeat;}
+	/*评价等级 END*/
+	
+	/*会议评价 END*/
+	.textarea_con_counter{
+		font-size: 14px;
+		float:right;
+		margin-right:25px;
+	}
+	/*会议评价 END*/
+	 </style>
+	 
+<script>
+		function loadfunction()
+	{
+
+    var url =  window.location.search;
+    var newstr=url.replace("?hid=","");
+    if (newstr==1)	//接受邀请后返回查看
+    {
+    	 	$('#i_enroll').hide();
+    	 	$('#i_bmxx').show();
+    	 	$('#yqstate').html('报名通过');
+    }
+	}
+</script>
+<body onload="loadfunction()">
+
+<div id="phd_userinfo">
+
+	<div class="phd_userinfo">
+		 <div class="phd_userinfo_pool">
+			<div class="phd_userinfo_left">
+			<span class="pr5">JAMES 欢迎来到善融商务企业商城！</span>
+			<a href="javascript:;"><span class="email">(10)</span></a>
+			<a href="index.html"><span class="pl5">商城首页</span></a>
+			<a href="javascript:;"><span class="pl5">[退出]</span></a>
+			</div>
+			<ul class="phd_userinfo_right">
+				<li>客服热线：<span class="red">95533&nbsp;#056</span></li>
+			 	<li class="jst"><a href="javascript:;">即时通</a></li>			
+				<li class="zxkf"><a href="javascript:;">在线客服</a></li>
+				<li class="jhd">进货单<span>0</span>件</li>
+				<li class="sczh"><a href="javascript:;">商城账户</a></li>
+				<li class="sczh"><a href="javascript:;">帮助中心</a></li>
+				<li class="sczh"><a href="javascript:;">建行首页</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+<div id="phd" style="margin-top:1px;">
+
+	<div class="phd_pool">	
+	    <li class="phd_li"><a href="javascript:;"><span id="gosearch1" class="blblue" onclick="c1()">产品</span></a></li>
+		<li class="phd_li"><a href="javascript:;"><span id="gosearch2" class="" onclick="c2()">公司</span></a></li>
+		<li class="phd_li" style="width:65px;"><a href="javascript:;"><span id="gosearch3" class="" onclick="c3()">求购信息</span></a></li>
+		<li class="phd_li" style="background:none;"><a href="javascript:;"><span id="gosearch4" class="" onclick="c4()">资讯</span></a></li>
+		<a href="javascript:;"><span class="phd_search_super">高级搜索<span></span></span></a>
+		<br>
+		<!--全局搜索开始-->
+		<div class="phd_search_icon"><img src="images/phd_search_icon_17x18.png"></div>
+		<div class="phd_searchbar"><input type="text" class="phd_search_input1" value="请输入关键字">
+		<span class="phd_search_word">搜&nbsp;索</span></div>
+		<span class="phd_search_hit">热门搜索：
+		<a href="javascript:;"><span class="m5">移动电源</span></a>
+		<a href="javascript:;"><span class="m5 orange">红木家具</span></a>
+		<a href="javascript:;"><span class="m5">化学</span></a>
+		<a href="javascript:;"><span class="m5">家纺</span></a>
+		<a href="javascript:;"><span class="m5">茶叶</span></a>
+		<a href="javascript:;"><span class="m5">展会</span></a></span>
+	</div>
+	<!--全局搜索结束-->
+</div>
+<div id="phd_nav">	
+	<div class="phd_nav_first_pool">
+	<span class="phd_nav_help"></span>
+    <li class="phd_nav_first"><a class="phd_nav_first" href="javascript:;"><span>我的首页</span></a></li>
+	<li class="phd_nav_first"><a class="phd_nav_first" href="javascript:;"><span>供应服务</span></a></li>
+	<li class="phd_nav_first"><a class="phd_nav_first" href="javascript:;"><span>采购服务</span></a></li>
+	<li class="phd_nav_first"><a class="phd_nav_first" href="javascript:;"><span>会员服务</span></a></li>
+	<li class="phd_nav_first"><a class="phd_nav_first" href="javascript:;"><span>信用管理</span></a></li>
+	<li class="phd_nav_first"><a class="phd_nav_first" href="javascript:;"><span>企业空间</span></a></li>
+	<li class="phd_nav_first"><a class="phd_nav_first" href="javascript:;"><span>资金托管</span></a></li>
+	<li class="phd_nav_first"><a class="phd_nav_first" href="javascript:;"><span>融资中心</span></a></li>
+	<li class="phd_nav_first"><a class="phd_nav_first" href="javascript:;"><span>营销活动</span></a></li>
+	<li class="phd_nav_first_tab"><a class="phd_nav_first phd_nav_first_now" href="javascript:;"><span>我的助手</span></a></li>
+	</div>
+</div>
+<div class="wrap">
+	<div class="pbd_breadlink">
+		<span>您所在的位置：</span><a href="javascript:;"><span>商务中心</span></a> &gt; <a href="javascript:;"><span>我的助手</span></a> &gt; <span>洽谈会管理</span>
+	</div>
+	<div class="phd_dp_wrap clearfix">
+		<div class="phd_dp_sider fl">
+			<!--<div class="dp_apply_avatar"><a href="javascript:;"><img src="../images/pic_fylde.jpg" alt="广研测试总公司" /></a></div>
+			<h3>广研测试总公司</h3>
+			<dl class="dp_apply_nav">
+				<dt>账号管理</dt>
+				<dd>
+					<ul>
+						<li><a href="javascript:;" class="on">账号设置</a></li>
+						<li><a href="javascript:;">账号安全</a></li>
+						<li><a href="javascript:;">E积分管理</a></li>
+						<li><a href="javascript:;">客服管理</a></li>
+						<li><a href="javascript:;">商城账户管理</a></li>
+					</ul>
+				</dd>
+			</dl>-->
+            <h4 class="h4_big_title">我的助手</h4>
+            <dl class="dp_apply_nav">
+                <dt class="on">洽谈会管理</dt>
+                <dd style="display:block">
+                    <ul>
+                        <li><a href="洽谈会申办.html">洽谈会申办</a></li>
+                        <li><a href="洽谈会列表页.html" target="_blank">洽谈会报名</a></li>
+                        <li><a href="qt_qthsb.html">我申办的洽谈会</a></li>
+                        <li><a href="我报名的洽谈会.html"  class="on">我报名的洽谈会</a></li>
+                        <!-- <li><a href="我管理的洽谈会.html">我管理的洽谈会</a></li> -->
+                    </ul>
+                </dd>
+            </dl>
+		</div>
+		<div class="phd_dp_main fr">
+			<div class="dp_apply_con">
+				<div class="dp_apply_top"></div>
+				<div class="dp_apply_center ">
+					<h3>我报名的洽谈会</h3>
+					<div class="account_title" style="display:none">
+						<p>提交申请之前请确认您的会员信息和资料填写完整，并且真实准确。</p>
+						<p>否则您的申请可能不会被受理，带有<span class="red">*</span>的项目必须填写。</p>
+					</div>
+					<dl class="account_dl">
+						<dd style="margin-bottom:10px;margin-left:0">
+							<table>
+                                <tr>
+									<th width="90" height="37">洽谈会类型：</th>
+									<td width="40">
+                                        <div class="select">
+                                            <span>全部</span>
+                                            <input type="hidden" class="define_input" value="">
+                                            <a class="hover" href="javascript:;"></a>
+                                        </div>
+                                        <ul class="option">
+                                            <li><a href="javascript:;">采购</a></li>
+                                            <li><a href="javascript:;">供应</a></li>
+                                        </ul>
+                                    </td>
+                                    <th width="100" height="37" >洽谈会状态：</th>
+									<td>
+                                        <div class="select">
+                                            <span>全部</span>
+                                            <input type="hidden" class="define_input" value="">
+                                            <a class="hover" href="javascript:;"></a>
+                                        </div>
+                                        <ul class="option">
+                                            <li><a href="javascript:;">报名中</a></li>
+                                            <li><a href="javascript:;">报名截止</a></li>
+                                            <li><a href="javascript:;">洽谈中</a></li>
+                                            <li><a href="javascript:;">洽谈结束</a></li>
+                                        </ul>
+                                    </td>
+                                    <th width="100" height="37" >报名状态：</th>
+									<td>
+                                        <div class="select">
+                                            <span>全部</span>
+                                            <input type="hidden" class="define_input" value="">
+                                            <a class="hover" href="javascript:;"></a>
+                                        </div>
+                                        <ul class="option">
+                                            <li><a href="javascript:;">受邀中</a></li>
+                                            <li><a href="javascript:;">审核中</a></li>
+                                            <li><a href="javascript:;">报名通过</a></li>
+                                            <li><a href="javascript:;">未接受邀请</a></li>
+                                            <li><a href="javascript:;">报名不通过</a></li>
+                                        </ul>
+                                    </td>
+                                    <th  >
+                                    <button class="search blueBtn">
+									   查询
+							        </button>
+                                    </th>
+								</tr>
+							</table>
+						</dd>
+					</dl>
+					
+				</div>
+                <table class="conTable conTable_2">
+							<thead>
+									<tr>
+											<td>洽谈会主题</td>
+											<td>洽谈会类型</td>
+											<td style="width:100px">洽谈会状态</td>
+											<td style="width:100px">报名状态</td>
+											<td style="width:100px">洽谈起止时间 <img src="images/down_blue.png"></td>
+											<td style="width:100px">报名方式</td>
+                                            <td style="width:222px">操作</td>
+									</tr>
+							</thead>
+							<tbody>
+									<tr>
+											<td class="sessSort tl pl10">上海青客家居用品采购专场</td>
+											<td class="sessName">采购</td>
+											<td>报名中</td>
+											<td>审核中</td>
+											<td class='o1 sessStatus'>2015-12-28 09:00-11:00</td>
+                                            <td class='o1 sessStatus'>自主报名</td>
+											<td class="tl pl15">
+												<a href='在线洽谈详情页-3.html' class="res" target="blank">详情</a><span class="sx pl2">|</span>
+												<a href='javascript:;' >报名信息</a>
+											</td>
+									</tr>
+                                    <tr>
+											<td class="sessSort tl pl10">机器热转印的油墨大额采购！</td>
+											<td class="sessName">采购</td>
+											<td>报名中</td>
+											<td>报名不通过<img src="images/icon_fa_question.jpg" width="14" height="14" style="margin:-3px 0 0 2px" title="您提交的资料，未通过申办方的审核：不具备报名资质。"></td>	
+											<td class='o1 sessStatus'>2015-12-25 09:00-17:00</td>
+                                            <td class='o1 sessStatus'>自主报名</td>
+											<td class="tl pl15">
+													<a href='javascript:;' class="res">详情</a><span class="sx pl2">|</span>
+													<a href='洽谈会报名-修改.html'>修改</a>
+											</td>
+								   	</tr>
+                                    <tr>
+											<td class="sessSort tl pl10">欧伦泰防火设备供应</td>
+											<td class="sessName">供应</td>
+											<td>报名中</td>
+											<td><span id="yqstate">受邀中</span></td>											
+											<td class='o1 sessStatus'>2015-12-20 08:30-11:00</td>
+                                            <td class='o1 sessStatus'>邀请报名</td>
+											<td class="tl pl15">
+													<a href='在线洽谈详情页-供应只读.html' class="res">详情</a><span class="sx pl2">|</span>
+													<a href='javascript:;' id="i_enroll">接受邀请</a>
+													<a href='javascript:;' id="i_bmxx" style="display:none;">报名信息</a>
+											</td>
+								   	</tr>
+									<tr>
+											<td class="sessSort tl pl10">鸿路钢构入驻善融平台，期待与您合作</td>
+											<td class="sessName">采购</td>
+											<td>洽谈中</td>
+											<td>报名通过</td>											
+
+											<td class='o1 sessStatus'>2015-12-06 08:30-16:00</td>
+                                            <td class='o1 sessStatus'>自主报名</td>
+											<td class="tl pl15">
+													<a href='javascript:;' class="res">详情</a><span class="sx pl2">|</span>
+                                                    <a href="javascript:;" id="btn_show_pop9">报名信息</a><span class="sx pl2">|</span>
+													<a href='洽谈室-参会方.html' target="_blank">进入洽谈室</a>
+											</td>
+								   	</tr>                                                                       
+									<tr>
+											<td class="sessSort tl pl10">汽保经销商新开店采购！</td>
+											<td class="sessName">采购</td>
+											<td>报名截止</td>
+											<td>审核中</td>											
+
+											<td class='o1 sessStatus'>2015-11-26 09:00-11:00</td>
+                                            <td class='o1 sessStatus'>自主报名</td>
+											<td class="tl pl15">
+													<a href='javascript:;' class="res">详情</a><span class="sx pl2">|</span>
+													<a href="javascript:;">报名信息</a>
+											</td>
+								    </tr> 
+                                    <tr>
+											<td class="sessSort tl pl10">建设银行携手采购平台开启国企电商化...</td>
+											<td class="sessName">采购</td>
+											<td>洽谈中</td>
+											<td>未接受邀请</td>											
+
+											<td class='o1 sessStatus'>2015-11-22 09:00-11:00</td>
+                                            <td class='o1 sessStatus'>邀请报名</td>
+											<td class="tl pl15">
+													<a href='javascript:;' class="res">详情</a>
+											<!-- 		<a href='javascript:;'>拒绝原因</a>
+													<span class="sx pl2">|</span> -->
+										
+											</td>
+								    	</tr>
+                                        <tr>
+											<td class="sessSort tl pl10">福州馨雅保洁公司大采购！</td>
+											<td class="sessName">采购</td>
+											<td>洽谈中</td>
+											<td>报名不通过<img src="images/icon_fa_question.jpg" width="14" height="14" style="margin:-3px 0 0 2px" title="您提交的资料，未通过申办方的审核：未提供含税含运费报价单。" /></td>
+											<td class='o1 sessStatus'>2015-11-11 09:00-11:00</td>
+                                            <td class='o1 sessStatus'>自主报名</td>
+											<td class="tl pl15">
+												<a href='javascript:;' class="res">详情</a><!-- <span class="sx pl2">|</span>
+												<a href='javascript:;'>修改</a> -->							
+											</td>
+								    	</tr>
+								    	 <tr>
+											<td class="sessSort tl pl10">永大电梯 全国招募零配件供应商！</td>
+											<td class="sessName">采购</td>
+											<td>洽谈结束</td>
+											<td>报名通过</td>											
+											<td class='o1 sessStatus'>2015-11-10 09:00-11:00</td>
+                                            <td class='o1 sessStatus'>自主报名</td>
+											<td class="tl pl15">
+													<a href='javascript:;' class="res">详情</a><span class="sx pl2">|</span>
+													<a href="javascript:;">报名信息</a><span class="sx pl2">|</span>
+													<a href="javascript:;" class="meeting_comment">会议评价</a>
+													<a href="javascript:;" class="commonded" style="display:none" >查看评价</a>
+											</td>
+								    	</tr> 
+							</tbody>
+					</table>
+                
+				<p class="page page1">
+					<em>共8条记录</em>
+					<a id="prev" class="nor" href="javascript:;">上一页</a>
+					<span>1</span>
+					<!--<a href="javascript:;">2</a>
+					<a href="javascript:;">3</a>
+					<a href="javascript:;">4</a> ...
+					<a>11</a>-->
+					<a id="next" href="javascript:;" class="nor">下一页</a>
+					<em class="all">共1页</em>
+					<!--<label>到第</label>
+					<input type="text" class="input_page" value="">
+					<label>页</label>
+					<input type="button" class="btn_queding" value="确定">-->
+				</p>
+				<p style="height:20px;"></p>
+			</div>
+            
+		</div>
+	</div>
+</div>
+		<!--footer-->
+		<div id="footer">
+		    <div id="footer_box">
+		       
+		        <!--site info-->
+		        <div class="footer_site_info">
+		            <div class="footer_nav">
+		                <a href="javascript:;" class="gray">关于我们</a>
+		                <a href="javascript:;" class="gray">服务条款</a>
+		                <a href="javascript:;" class="gray">免责声明</a>
+		                <a href="javascript:;" class="gray">联系我们</a>
+		                <a href="javascript:;" class="gray">网站地图</a>
+                        <span>© 版权所有 中国建设银行版权所有 京ICP备 13030780号</span>
+                        </div>
+                     <div class="footer_info">
+		                <p>总行地址：中国北京西城区金融大街25号 邮编：100033 手机网站：m.ccb.com</p>
+		            </div>
+                    <div class="footer_img"> 
+                    <a href="javascript:;"><img src="images/ico_bottom.png"/ class="icon_left"></a>
+                    <a href="javascript:;"><img src="images/ico_cxwz.png"></a>
+                   </div>
+		        </div>
+		        <!--/site info-->
+		    </div>
+		</div>
+		<!--/footer-->
+
+<div class="mask"></div>
+<!--会议评价弹出框-->
+<div id="pop1" class="fa_dialog" style="display:none;">
+	<table>
+		<thead>
+			<tr>
+				<th>会议评价<span class="fa_close">X</span></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td height="156">
+					<div class="stars">
+						<span class="fl">会议满意度：</span>
+						<ul id="starsList" class="rating fl">
+							<li class="current" style="">5 out of 5</li>
+							<li><a href="javascript:;" class="rate1" i_val="1">*</a></li>
+							<li><a href="javascript:;" class="rate2" i_val="2">*</a></li>
+							<li><a href="javascript:;" class="rate3" i_val="3">*</a></li>
+							<li><a href="javascript:;" class="rate4" i_val="4">*</a></li>
+							<li><a href="javascript:;" class="rate5" i_val="5">*</a></li>
+						</ul>
+					</div>
+					<textarea id="textarea_y" style="padding:5px;width:380px;border: 1px solid #ccc;border-left-color: #9a9a9a;border-top-color: #9a9a9a; height: 80px;" rows="7px" cols="60" placeholder="请输入您对本次会议的评价" maxlength="50" onfocus="fed_inputMaxLength(this,50,'catchask_con_counter_num')"></textarea>
+                    <div class="textarea_con_counter">可输入<span id="catchask_con_counter_num">50</span>字</div>  
+				</td>
+			</tr>
+		</tbody>
+		<tfoot>
+			<tr>
+				<td>
+					<input type="button" class="btn_fa_confirm" value="确认" >
+					<input type="button" class="btn_fa_cancel" value="取消">
+				</td>
+			</tr>
+		</tfoot>
+	</table>
+</div>
+<!--查看评价弹出框-->
+<div id="pop2" class="fa_dialog" style="display:none;">
+	<table>
+		<thead>
+			<tr>
+				<th>查看评价<span class="fa_close">X</span></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td height="156">
+					<div class="stars">
+						<span class="fl">会议满意度：</span>
+						<span class="fl rated" style=" margin-left:0px;"></span>
+					</div>
+					<span style="font-size:14px; display:block; height:100px; margin:0 26px;vertical-align:top;text-align:left;">感谢善融商城的在线洽谈，让我们顺利的与永大集团建立合作关系，以后我们将继续参与善融商城的在线洽谈会！</span>
+				</td>
+			</tr>
+		</tbody>
+		<tfoot>
+			<tr>
+				<td>
+					<input type="button" class="btn_fa_confirm" value="确认" >
+					<!-- <input type="button" class="btn_fa_cancel" value="取消"> -->
+				</td>
+			</tr>
+		</tfoot>
+	</table>
+</div>
+
+    <!--确认邀请弹窗-->
+<div style="display:none;z-index:99999999"></div>
+<div id="pop5" class="fa_dialog" style="display:none;">
+	<table>
+		<thead>
+			<tr>
+				<th>提示<span class="fa_close">X</span></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>
+					<img src="images/icon_fa_question.jpg">如果接受邀请，需要您补充会议所需<br /><span style="padding-right:30px;">信息，是否确认接受邀请？</span>
+				</td>
+			</tr>
+		</tbody>
+		<tfoot>
+			<tr>
+				<td>
+					<input type="button" value="确定" class="btn_fa_confirm" onclick='location.href="洽谈会邀请报名.html"'>
+                    <input type="button" class="btn_fa_cancel" value="取消">
+				</td>
+			</tr>
+		</tfoot>
+	</table>
+</div>
+<!-- </div> -->
+
+<!--查看报名信息弹出框-->
+<div id="pop9" class="fa_dialog9" >
+	<table>
+		<thead>
+			<tr style="height:40px;">
+				<th >报名信息<span class="fa_close">X</span></th>
+			</tr>
+		</thead>
+		<tbody style="height:580px;">
+			<!-- 报名信息start  -->
+			<table class="fa_dialog9_bd">
+						<tr>
+							<td class="bdleft">企业名称：</td>
+							<td class="bdright">佛山市钰锦龙机械设备有限公司</td>
+						</tr>
+						<tr>
+							<td class="bdleft">企业所在地：</td>
+							<td class="bdright">广东省佛山市</td>
+						</tr>
+						<tr>
+							<td class="bdleft">企业性质：</td>
+							<td class="bdright">私营企业</td>
+						</tr>
+						<tr>
+							<td class="bdleft">联系人：</td>
+							<td class="bdright">李长福</td>
+						</tr>
+						<tr>
+							<td class="bdleft">联系电话：</td>
+							<td class="bdright">13623863528</td>
+						</tr>
+						<tr>
+							<td class="bdleft" style="vertical-align:top;">企业简介：</td>
+							<td class="bdright"><div class="div_content_02" style="border:none; padding:0; margin:0;">
+														佛山市钰锦龙机械设备有限公司是集研发、设计、制造、安装于一体的化工机械和人造石英石压机械的生产厂家。钰锦龙敞着海纳百川，有容纳乃大的心怀，博采众长，革陈鼎新的新理念,孜孜以求,不断创新。" 钰锦龙" ，本着"以质量求信誉、以服务求生存"的指导原则，不断完善企业管理，务求以最优良的产品，最真诚的服务，回报新老客户。
+													</div></td>
+						</tr>
+						<tr>
+							<td class="bdleft">合作物流企业：</td>
+							<td class="bdright">德邦物流</td>
+						</tr>
+						<tr>
+							<td class="bdleft">海外合作企业：</td>
+							<td class="bdright">法国 Yves Salomon</td>
+						</tr>
+						<tr>
+							<td class="bdleft">下载附件：</td>
+							<td class="bdright"><div class="fileInput left" style="background:url(images/xiazai.png) no-repeat;">
+															   <input type="file" name="upfile" id="upfile" class="upfile" onchange="document.getElementById('upfileResult').innerHTML=this.value">
+															   <input class="upFileBtn" type="button" value="上传图片" onclick="document.getElementById('upfile').click()" disabled="">
+															</div>
+															<span class="tip left" id="upfileResult">报名文件.doc</span></td>
+						</tr>
+			</table>
+			<!-- 报名信息end  -->
+		</tbody>
+	</table>
+</div>
+<script type="text/javascript">
+	/*会议评价-弹窗*/
+$(".meeting_comment").bind("click", function() {
+	$(".mask").css({
+		display: "block",
+		height: $(document).height()
+	});
+	$("#pop1").show();
+})
+
+/*查看评价-弹窗*/
+$(".commonded").bind("click", function() {
+	$(".mask").css({
+		display: "block",
+		height: $(document).height()
+	});
+	$("#pop2").show();
+})
+
+$(".fa_close,.btn_fa_confirm,.btn_fa_cancel").bind("click", function() {
+	$(".fa_dialog").hide();
+	$(".mask").hide();
+})
+$('.btn_fa_confirm').click(function(){
+	$('.meeting_comment').hide();
+	$('.commonded').show()
+
+})
+</script>
+
+<!-- 下拉菜单start -->
+<script>
+(function($){
+	$.fn.extend({
+		'toSelect':function(){
+			var $this = $(this);
+			var option = this.next('ul.option');
+			
+			this.click(function(){
+				option.toggle(1,function(){ 
+					if(option.is(':visible')){ 
+					  	$this.addClass("selecton");
+						$(document).bind('click',function(e){
+							if($(e.target).attr('class') == 'hover'){ 
+								return false;
+							}
+							option.hide();	
+							$(document).off();		
+							$this.removeClass("selecton");					
+						})
+					}
+					else{
+						$this.removeClass("selecton");
+						$(document).off();
+					}
+				});
+			})
+			option.find('a').click(function(){
+				if($this.attr('class') != 'hover'){
+					$this.next('ul.option').hide();
+					$this.find('span').html($(this).html());
+					$(".select").removeClass("selecton");
+					return_fun($this.find('span').html());	
+				}
+			})
+		}
+	})
+})(jQuery);
+$(function(){
+	$('div.select').each(function(){
+		$(this).toSelect()
+	});
+})
+</script>
+<!-- 下拉菜单end  -->
+
+<script>
+$(function(){
+    var aMenuOneLi = $(".fisrt_nav li"),
+        aMenuTwo = $(".fisrt_nav dd");
+    $(".fisrt_nav dt").each(function(i){
+        $(this).click(function(){
+            if ($(aMenuTwo[i]).css("display") == "block"){
+                $(aMenuTwo[i]).slideUp(300);
+                $(this).parents("li").removeClass("on");
+            } else {
+                for (var j = 0; j < aMenuTwo.length; j++){
+                    $(aMenuTwo[j]).slideUp(300);
+                    $(this).parents("li").removeClass("on");
+                }
+                $(aMenuTwo[i]).slideDown(300);
+                $(this).parents("li").addClass("on").siblings("li").removeClass("on");
+            }
+        });
+    });
+    $(".second_nav li").bind("click",function(){
+        $(this).find(".third_nav").slideToggle();
+    })
+
+/*    $("#btn_show_pop1").bind("click", function () {
+        $(".mask").css({ display: "block", height: $(document).height() });
+        $("#pop1").show();
+    })
+    $("#btn_show_pop2").bind("click", function () {
+        $(".mask").css({ display: "block", height: $(document).height() });
+        $("#pop2").show();
+    })
+    $("#btn_show_pop3").bind("click", function () {
+        $(".mask").css({ display: "block", height: $(document).height() });
+        $("#pop3").show();
+    })
+    $("#btn_show_pop4").bind("click", function () {
+        $(".mask").css({ display: "block", height: $(document).height() });
+        $("#pop4").show();
+    }) */
+    $(".fa_close,.btn_fa_confirm,.btn_fa_cancel").bind("click", function () {
+        $(".fa_dialog").hide();
+        $(".mask").hide();
+    })
+})
+</script>
+<script>
+	 /*       $(function () {
+	            $("#btn_show_pop1").bind("click", function () {
+			        $(".mask").css({ display: "block", height: $(document).height() });
+			        $("#pop1").show();
+			    })
+			    $("#btn_show_pop2").bind("click", function () {
+			        $(".mask").css({ display: "block", height: $(document).height() });
+			        $("#pop2").show();
+			    })
+			    $("#btn_show_pop3").bind("click", function () {
+			        $(".mask").css({ display: "block", height: $(document).height() });
+			        $("#pop3").show();
+			    })
+			    $("#btn_show_pop4").bind("click", function () {
+			        $(".mask").css({ display: "block", height: $(document).height() });
+			        $("#pop4").show();
+			    })
+			    $(".fa_close,.btn_fa_confirm,.btn_fa_cancel").bind("click", function () {
+			        $(".tips_pop").hide();
+			        $(".mask").hide();
+			    })
+	        })   */
+	
+$(".queren").click(function(){
+	$(".bmz").text("已取消");
+	$(".yqx").hide();
+	})
+
+//评价五星
+$(document).on("click", ".rating li a", function() {
+	var indexNum = $(this).parent().index();
+	$(".rating .haschecked").removeClass('haschecked');
+	$(".rating li").eq(indexNum).children('a').addClass('haschecked');
+});
+
+//字数限制
+function fed_inputMaxLength(target,maxlength,counterId){  
+    if($(target).attr('fed_max_length')==null){  
+        $(target).attr('fed_max_length',maxlength);  
+        var counter = $('#'+counterId);  
+        if ($.browser.msie) { //IE浏览器  
+            $(target).unbind("propertychange").bind("propertychange", function(e) {  
+                e.preventDefault();  
+                textareaMaxProc1(target, maxlength);  
+                counter.html(maxlength-$(target).val().length);  
+            });  
+            target.attachEvent("onpropertychange", function(e) {  
+                //e.preventDefault();  
+                textareaMaxProc1(target, maxlength);  
+                counter.html(maxlength-$(target).val().length);  
+            });  
+            
+        }else { //ff浏览器  
+            target.addEventListener("input",function(e) {  
+                e.preventDefault();  
+                textareaMaxProc1(target, maxlength);  
+                counter.html(maxlength-$(target).val().length);  
+            },false);   
+        }  
+        $('target').unbind("keypress").bind("keypress", function(event) {  
+            var code;  
+            if(typeof event.charCode =="number" ){ //charCode只在keypress事件后才包含值，此时keyCode可能有值也可能没有，Ie没有charCode属性。  
+                code = event.charCode;  
+            }else{  
+                code = event.keyCode;  
+            }  
+            if(code > 9 && !event.ctrlKey && $(target).val().length>=maxlength){  
+                event.preventDefault();  
+            }else if(event.ctrlKey && $(target).val().length>=maxlength && code==118){  
+                event.preventDefault();  
+            }  
+        });  
+    }  
+}  
+  
+   
+function textareaMaxProc1(textArea, total){  
+    var max;  
+    max=total;  
+      
+    if($(textArea).val().length > max){  
+        $(textArea).val($(textArea).val().substring(0,max));  
+    }  
+}
+
+/*报名信息-弹窗*/
+$("#btn_show_pop9").bind("click", function() {
+	$(".mask").css({
+		display: "block",
+		height: $(document).height()
+	});
+	$("#pop9").show();
+})
+$(".fa_close").bind("click", function() {
+	$(".fa_dialog9").hide();
+	$(".mask").hide();
+})
+
+/* 确认接受邀请-弹窗 */
+			$(".details_page_cont_part5 .part_title span").click(function(){
+				$(this).addClass('on').siblings().removeClass('on');
+				var _index=$(this).index();
+				$(".details_page_cont_part5 div").hide().eq(_index).show();
+			})
+			$('#i_enroll').click(function(){
+				$('#pop5').show();
+				$(".mask").css({ display: "block", height: $(document).height() });
+			});
+			$('.btn_fa_confirm,.btn_fa_cancel,.fa_close').click(function(){
+				$('#pop5').hide();
+				$('.mask').hide();
+			})
+			$('.btn_fa_confirm').click(function(){
+				$('#i_enroll').hide();
+				$('#i_enroll_1').css({"display":"block","color":"#333"});
+			})
+			</script>
+</body>
+</html>

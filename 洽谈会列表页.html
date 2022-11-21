@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>在线洽谈列表页</title>
+		<link rel="stylesheet" href="css/reset.css" />
+		<link rel="stylesheet" href="css/basc.css" />
+		<link rel="stylesheet" href="css/contain.css" />
+		<link rel="stylesheet" href="css/kuCity.css">
+	</head>
+
+	<body>
+		<!--top-->
+		<div id="top">
+			<div class="top_warp">
+				<div class="top_left">
+					<span>欢迎来到善融商务企业商城</span>
+					<a href="index.html">商城首页</a>
+					<a href="javascript:;">会员登录</a>
+					<a href="javascript:;">会员注册</a>
+				</div>
+				<div class="top_right">
+					<span class="top_tel left">客服热线：<em>95533 #056</em></span>
+					<a href="javascript:;" class="on_time_service left">即时通</a>
+					<a href="javascript:;" class="cs_online left">在线客服</a>
+					<div class="cart_list left"><a>进货单 <span class="cart_num">0</span> 件<i class="arrow_down"></i></a>
+					</div>
+					<a href="javascript:;" class="top_nav_link left">商城账户</a>
+					<a href="javascript:;" class="top_nav_link left">帮助中心</a>
+					<a href="javascript:;" class="top_nav_link left">个人商城</a>
+					<a href="javascript:;" class="top_nav_link left">建行首页</a>
+				</div>
+			</div>
+		</div>
+		<!--/top-->
+		<!--header-->
+		<div id="header">
+			<div class="left">
+				<a href="洽谈会首页.html" class="left" target="_blank">
+					<img src="images/user_search/phd_logo.png" />
+				</a>
+			</div>
+		</div>
+		<!--/header-->
+		<!--nav-->
+		<div id="nav">
+			<ul class="nav_content">
+				<li class="nav_li  on"><a href="javascript:;">首页</a>
+				</li>
+				<li class="nav_li"><a href="javascript:;">涉农产业<i class="hot_icon"></i></a>
+				</li>
+				<li class="nav_li"><a href="javascript:;">专业市场</a>
+				</li>
+				<li class="nav_li"><a href="javascript:;">地方汇</a>
+				</li>
+				<li class="nav_li"><a href="javascript:;">融资中心</a>
+				</li>
+				<li class="nav_li"><a href="javascript:;">企业黄页</a>
+				</li>
+				<li class="nav_li"><a href="javascript:;">资讯<i class="hot_icon"></i></a>
+				</li>
+				<li class="nav_li"><a href="javascript:;">善付通</a>
+				</li>
+			</ul>
+		</div>
+		<!--/nav-->
+		<div class="path w1200">
+			当前位置：<a href="index.html">首页</a> &gt; <a href="洽谈会首页.html">在线洽谈</a> &gt; <a href="javascript:;">洽谈会列表</a>
+		</div>
+		<!--分类 start-->
+		<div class="category">
+			<h3 class="title">按类目进一步选择<span style="float:right;font-size:12px;font-weight:normal;margin-right:10px;">共有 <font color="red">24</font> 个洽谈会</span></h3>
+			<div class="category_cont">
+				<div class="category_list">
+					<span><a href="javascript:;">纺织皮革</a>(4)</span>
+					<span><a href="javascript:;">专业机器</a>(3)</span>
+					<span><a href="javascript:;">清洁用品</a>(2)</span>
+					<span><a href="javascript:;">安全防护产品</a>(2)</span>
+					<span><a href="javascript:;">运输设备</a>(1)</span>
+					<span><a href="javascript:;">女装</a>(1)</span>
+					<p class="category_list_more" id="pstyle" onClick="openShutManager(this,'box',false,'隐藏','更多')"><a href="javascript:;" id="text">更多</a></p>
+					<div class="category_list2" id="showCat" style="display:none">
+						<span><a href="javascript:;">钢铁</a>(4)</span>
+						<span><a href="javascript:;">童鞋</a>(3)</span>
+						<span><a href="javascript:;">消防设备</a>(2)</span>
+						<span><a href="javascript:;">装修团料</a>(2)</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="condition_search">
+			<!--城市筛选start -->
+			<table style="float:left; margin-top:-4px;">
+                <tr>
+                    <td>
+                        <div class="select">
+                            <span>请选择省</span>
+                            <input type="hidden" class="define_input" value="">
+                            <a class="hover" href="javascript:;"></a>
+                        </div>
+                        <ul class="option">
+                            <li><a href="javascript:;">北京市</a></li>
+                            <li><a href="javascript:;">上海市</a></li>
+                            <li><a href="javascript:;">广东省</a></li>
+                            <li><a href="javascript:;">福建省</a></li>
+                        </ul>
+                   </td>
+                   <td>
+                        <div class="select">
+                            <span>请选择市</span>
+                            <input type="hidden" class="define_input" value="">
+                            <a class="hover" href="javascript:;"></a>
+                        </div>
+                        <ul class="option">
+                            <li><a href="javascript:;">广州市</a></li>
+                            <li><a href="javascript:;">佛山市</a></li>
+                            <li><a href="javascript:;">汕头市</a></li>
+                            <li><a href="javascript:;">深圳市</a></li>
+                            <li><a href="javascript:;">珠海市</a></li>
+                        </ul>
+                    </td>
+                   	<td style="padding-left: 10px;"> 
+                        <div class="select">
+                            <span>发布时间</span>
+                            <input type="hidden" class="define_input" value="">
+                            <a class="hover" href="javascript:;"></a>
+                        </div>
+                        <ul class="option">
+                            <li><a href="javascript:;">三月内</a></li>
+                            <li><a href="javascript:;">半年内</a></li>
+                            <li><a href="javascript:;">一年内</a></li>
+                        </ul>
+                    </td>
+                   	<td style="padding-left: 10px;"> 
+                        <div class="select">
+                            <span>状态</span>
+                            <input type="hidden" class="define_input" value="">
+                            <a class="hover" href="javascript:;"></a>
+                        </div>
+                        <ul class="option">
+                            <li><a href="javascript:;">报名中</a></li>
+                            <li><a href="javascript:;">报名截止</a></li>
+                            <li><a href="javascript:;">洽谈中</a></li>
+                            <li><a href="javascript:;">洽谈结束</a></li>
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+			<!--城市筛选end -->
+			<div class="search_box">
+				<input type="text" class="search_txt" placeholder="请输入关键字" style="font-size:12px;font-family:'Microsoft YaHei', Arial, '宋体', Helvetica, sans-serif;">
+				<input type="button" class="search_btn">
+			</div>
+		</div>
+		<!--分类 end-->
+		<div class="online_conference list_count">
+			<div class="online_confer_cont">
+				<ul class="clearfix" style="width:1274px;">
+                <li>
+						<h2 class="dot"><a href="在线洽谈详情页-供应-受邀.html">欧伦泰防火设备供应</a></h2>
+						<p class="confer_money">洽谈金额：<span style="color: #FF6600;">100</span>万元</p>
+						<p class="confer_time">开始时间：2015-12-20&nbsp;&nbsp;08:30</p>
+						<p class="confer_time">报名截止：2015-12-16</p>
+						<p class="confer_time">报名人数：<span style="color: #ff6600;">122</span>人</p>
+						<div class="clearfix" style="width: 400px;">
+							<dl class="procedure">
+								<dt><div class="inner_box_2"><img src="images/conf_ico_07_1.png"></div></dt>
+								<dd style="color:#0782c3;">报名中</dd>
+							</dl>
+							<dl class="procedure">
+								<dt><div class="inner_box_2"><img src="images/conf_ico_08.png"></div></dt>
+								<dd>报名截止</dd>
+							</dl>
+							<dl class="procedure">
+								<dt><div class="inner_box_2"><img src="images/conf_ico_13.png"></div></dt>
+								<dd>洽谈中</dd>
+							</dl>
+							<dl class="procedure">
+								<dt><div class="inner_box_2"><img src="images/conf_ico_10.png"></div></dt>
+								<dd>洽谈结束</dd>
+							</dl>
+						</div>
+						<div class="enroll_box clearfix">
+							<a href="在线洽谈详情页-供应-受邀.html" class="enroll_btn_wybm">我要报名</a>
+						</div>
+					</li>
+                <li>
+						<h2 ><a href="在线洽谈详情页.html">紧急采购各类裘皮原料，裘皮制品</a></h2>
+						<p class="confer_money">洽谈金额：<span style="color: #FF6600;">320</span>万元</p>
+						<p class="confer_time">开始时间：2015-12-26&nbsp;&nbsp;09:00</p>
+						<p class="confer_time">报名截止：2015-12-24</p>
+						<p class="confer_time">报名人数：<span style="color: #ff6600;">127</span>人</p>
+						<div class="clearfix" style="width: 400px;">
+							<dl class="procedure">
+								<dt><div class="inner_box_2"><img src="images/conf_ico_07_1.png"></div></dt>
+								<dd style="color:#0782c3;">报名中</dd>
+							</dl>
+							<dl class="procedure">
+								<dt><div class="inner_box_2"><img src="images/conf_ico_08.png"></div></dt>
+								<dd>报名截止</dd>
+							</dl>
+							<dl class="procedure">
+								<dt><div class="inner_box_2"><img src="images/conf_ico_13.png"></div></dt>
+								<dd>洽谈中</dd>
+							</dl>
+							<dl class="procedure">
+								<dt><div class="inner_box_2"><img src="images/conf_ico_10.png"></div></dt>
+								<dd>洽谈结束</dd>
+							</dl>
+						</div>
+						<div class="enroll_box clearfix">
+							<a href="在线洽谈详情页.html" class="enroll_btn_wybm">我要报名</a>
+						</div>
+					</li>
+					<li>
+						<h2><a href="在线洽谈详情页-2.html">上海青客家居用品采购专场</a></h2>
+						<p class="confer_money">洽谈金额：<span style="color: #FF6600;">300</span>万元</p>
+						<p class="confer_time">开始时间：2015-12-28&nbsp;&nbsp;08:30</p>
+						<p class="confer_time">报名截止：2015-12-26</p>
+						<p class="confer_time">报名人数：<span style="color: #ff6600;">123</span>人</p>
+						<div class="clearfix" style="width: 400px;">
+							<dl class="procedure">
+								<dt><div class="inner_box_2"><img src="images/conf_ico_07_1.png"></div></dt>
+								<dd style="color:#0782c3;">报名中</dd>
+							</dl>
+							<dl class="procedure">
+								<dt><div class="inner_box_2"><img src="images/conf_ico_08.png"></div></dt>
+								<dd>报名截止</dd>
+							</dl>
+							<dl class="procedure">
+								<dt><div class="inner_box_2"><img src="images/conf_ico_13.png"></div></dt>
+								<dd>洽谈中</dd>
+							</dl>
+							<dl class="procedure">
+								<dt><div class="inner_box_2"><img src="images/conf_ico_10.png"></div></dt>
+								<dd>洽谈结束</dd>
+							</dl>
+						</div>
+						<div class="enroll_box clearfix">
+							<a href="在线洽谈详情页-2.html" class="enroll_btn_wybm">我要报名</a>
+						</div>
+					</li>
+					<li>
+						<h2 class="dot"><a href="javascript:;">60年老牌机床龙头企业，开启采销一体电商化时代！</a></h2>
+						<p class="confer_money">洽谈金额：<span style="color: #FF6600;">100</span>万元</p>
+						<p class="confer_time">开始时间：2015-12-29&nbsp;&nbsp;08:30</p>
+						<p class="confer_time">报名截止：2015-12-26</p>
+						<p class="confer_time">报名人数：<span style="color: #ff6600;">156</span>人</p>
+						<div class="clearfix" style="width: 400px;">
+							<dl class="procedure">
+								<dt><div class="inner_box_2"><img src="images/conf_ico_07_1.png"></div></dt>
+								<dd style="color:#0782c3;">报名中</dd>
+							</dl>
+							<dl class="procedure">
+								<dt><div class="inner_box_2"><img src="images/conf_ico_08.png"></div></dt>
+								<dd>报名截止</dd>
+							</dl>
+							<dl class="procedure">
+								<dt><div class="inner_box_2"><img src="images/conf_ico_13.png"></div></dt>
+								<dd>洽谈中</dd>
+							</dl>
+							<dl class="procedure">
+								<dt><div class="inner_box_2"><img src="images/conf_ico_10.png"></div></dt>
+								<dd>洽谈结束</dd>
+							</dl>
+						</div>
+						<div class="enroll_box clearfix">
+							<a href="javascript:;" class="enroll_btn_wybm">我要报名</a>
+						</div>
+					</li>
+					<li>
+						<h2><a href="javascript:;">福州馨雅保洁公司大采购</a></h2>
+						<p class="confer_money">洽谈金额：<span style="color: #FF6600;">120</span>万元</p>
+						<p class="confer_time">开始时间：2015-12-07&nbsp;&nbsp;08:30</p>
+						<p class="confer_time">报名截止：2015-11-25</p>
+						<p class="confer_time">报名人数：<span style="color: #ff6600;">324</span>人</p>
+						<div class="clearfix" style="width: 400px;">
+							<dl class="procedure">
+								<dt><div class="inner_box_2"><img src="images/conf_ico_07.png"></div></dt>
+								<dd>报名中</dd>
+							</dl>
+							<dl class="procedure">
+								<dt><div class="inner_box_2"><img src="images/conf_ico_08_1.png"></div></dt>
+								<dd style="color:#0782c3;">报名截止</dd>
+							</dl>
+							<dl class="procedure">
+								<dt><div class="inner_box_2"><img src="images/conf_ico_13.png"></div></dt>
+								<dd>洽谈中</dd>
+							</dl>
+							<dl class="procedure no_margin">
+								<dt><div class="inner_box_2"><img src="images/conf_ico_10.png"></div></dt>
+								<dd>洽谈结束</dd>
+							</dl>
+						</div>
+						<div class="enroll_box clearfix">
+							<a href="javascript:;" class="enroll_btn_wybm">查看详情</a>
+						</div>
+					</li>
+					<li>
+						<h2><a href="在线洽谈详情页-洽谈中.html">尼亚拉服装长期采购皮革服装制品</a></h2>
+						<p class="confer_money">洽谈金额：<span style="color: #FF6600;">320</span>万元</p>
+						<p class="confer_time">开始时间：2015-12-05&nbsp;&nbsp;14:00</p>
+						<p class="confer_time">报名截止：2015-11-24</p>
+						<p class="confer_time">报名人数：<span style="color: #ff6600;">113</span>人</p>
+						<div class="clearfix" style="width: 400px;">
+							<dl class="procedure">
+								<dt><div class="inner_box_2"><img src="images/conf_ico_07.png"></div></dt>
+								<dd>报名中</dd>
+							</dl>
+							<dl class="procedure">
+								<dt><div class="inner_box_2"><img src="images/conf_ico_08.png"></div></dt>
+								<dd>报名截止</dd>
+							</dl>
+							<dl class="procedure">
+								<dt><div class="inner_box_2"><img src="images/conf_ico_13_1.png"></div></dt>
+								<dd style="color:#0782c3;">洽谈中</dd>
+							</dl>
+							<dl class="procedure no_margin">
+								<dt><div class="inner_box_2"><img src="images/conf_ico_10.png"></div></dt>
+								<dd>洽谈结束</dd>
+							</dl>
+						</div>
+						<div class="enroll_box clearfix">
+							<a href="在线洽谈详情页-洽谈中.html" class="enroll_btn_wybm">进入洽谈室</a>
+						</div>
+					</li>
+					<li>
+						<h2><a href="在线洽谈详情页-洽谈中详情.html">鸿路钢构入驻善融平台，期待与您合作</a></h2>
+						<p class="confer_money">洽谈金额：<span style="color: #FF6600;">3500</span>万元</p>
+						<p class="confer_time">开始时间：2015-12-06&nbsp;&nbsp;08:30</p>
+						<p class="confer_time">报名截止：2015-11-24</p>
+						<p class="confer_time">报名人数：<span style="color: #ff6600;">233</span>人</p>
+						<div class="clearfix" style="width: 400px;">
+							<dl class="procedure">
+								<dt><div class="inner_box_2"><img src="images/conf_ico_07.png"></div></dt>
+								<dd>报名中</dd>
+							</dl>
+							<dl class="procedure">
+								<dt><div class="inner_box_2"><img src="images/conf_ico_08.png"></div></dt>
+								<dd>报名截止</dd>
+							</dl>
+							<dl class="procedure">
+								<dt><div class="inner_box_2"><img src="images/conf_ico_13_1.png"></div></dt>
+								<dd style="color:#0782c3;">洽谈中</dd>
+							</dl>
+							<dl class="procedure">
+								<dt><div class="inner_box_2"><img src="images/conf_ico_10.png"></div></dt>
+								<dd>洽谈结束</dd>
+							</dl>
+						</div>
+						<div class="enroll_box clearfix">
+							<a href="在线洽谈详情页-洽谈中详情.html" class="enroll_btn_wybm">进入洽谈室</a>
+						</div>
+					</li>
+					<li>
+						<h2><a href="javascript:;">建材类物资采购</a></h2>
+						<p class="confer_money">洽谈金额：<span style="color: #FF6600;">550</span>万元</p>
+						<p class="confer_time">开始时间：2015-11-28&nbsp;&nbsp;15:30</p>
+						<p class="confer_time">报名截止：2015-11-24</p>
+						<p class="confer_time">报名人数：<span style="color: #ff6600;">113</span>人</p>
+						<div class="clearfix" style="width: 400px;">
+							<dl class="procedure">
+								<dt><div class="inner_box_2"><img src="images/conf_ico_07.png"></div></dt>
+								<dd>报名中</dd>
+							</dl>
+							<dl class="procedure">
+								<dt><div class="inner_box_2"><img src="images/conf_ico_08.png"></div></dt>
+								<dd>报名截止</dd>
+							</dl>
+							<dl class="procedure">
+								<dt><div class="inner_box_2"><img src="images/conf_ico_13_1.png"></div></dt>
+								<dd style="color:#0782c3;">洽谈中</dd>
+							</dl>
+							<dl class="procedure">
+								<dt><div class="inner_box_2"><img src="images/conf_ico_10.png"></div></dt>
+								<dd>洽谈结束</dd>
+							</dl>
+						</div>
+						<div class="enroll_box clearfix">
+							<a href="javascript:;" class="enroll_btn_wybm">进入洽谈室</a>
+						</div>
+					</li>
+					<li>
+						<h2><a href="在线洽谈详情页-结束.html">中国重汽集团首次大额采购会</a></h2>
+						<p class="confer_money">洽谈金额：<span style="color: #FF6600;">500</span>万元</p>
+						<p class="confer_time">开始时间：2015-11-15&nbsp;&nbsp;08:30</p>
+						<p class="confer_time">报名截止：2015-11-13</p>
+						<p class="confer_time">报名人数：<span style="color: #ff6600;">122</span>人</p>
+						<div class="clearfix" style="width: 400px;">
+							<dl class="procedure">
+								<dt><div class="inner_box_2"><img src="images/conf_ico_07.png"></div></dt>
+								<dd>报名中</dd>
+							</dl>
+							<dl class="procedure">
+								<dt><div class="inner_box_2"><img src="images/conf_ico_08.png"></div></dt>
+								<dd>报名截止</dd>
+							</dl>
+							<dl class="procedure">
+								<dt><div class="inner_box_2"><img src="images/conf_ico_13.png"></div></dt>
+								<dd>洽谈中</dd>
+							</dl>
+							<dl class="procedure">
+								<dt><div class="inner_box_2"><img src="images/conf_ico_10_1.png"></div></dt>
+								<dd style="color:#0782c3;">洽谈结束</dd>
+							</dl>
+						</div>
+						<div class="enroll_box clearfix">
+							<a href="在线洽谈详情页-结束.html" class="enroll_btn_wybm">查看详情</a>
+						</div>
+					</li>
+					<li>
+						<h2><a href="javascript:;">永大电梯 全国招募零配件供应商</a></h2>
+						<p class="confer_money">洽谈金额：<span style="color: #FF6600;">220</span>万元</p>
+						<p class="confer_time">开始时间：2015-10-14&nbsp;&nbsp;08:30</p>
+						<p class="confer_time">报名截止：2015-10-08</p>
+						<p class="confer_time">报名人数：<span style="color: #ff6600;">152</span>人</p>
+						<div class="clearfix" style="width: 400px;">
+							<dl class="procedure">
+								<dt><div class="inner_box_2"><img src="images/conf_ico_07.png"></div></dt>
+								<dd>报名中</dd>
+							</dl>
+							<dl class="procedure">
+								<dt><div class="inner_box_2"><img src="images/conf_ico_08.png"></div></dt>
+								<dd>报名截止</dd>
+							</dl>
+							<dl class="procedure">
+								<dt><div class="inner_box_2"><img src="images/conf_ico_13.png"></div></dt>
+								<dd>洽谈中</dd>
+							</dl>
+							<dl class="procedure">
+								<dt><div class="inner_box_2"><img src="images/conf_ico_10_1.png"></div></dt>
+								<dd style="color:#0782c3;">洽谈结束</dd>
+							</dl>
+						</div>
+						<div class="enroll_box clearfix">
+							<a href="javascript:;" class="enroll_btn_wybm">查看详情</a>
+						</div>
+					</li>
+					<li>
+						<h2><a href="javascript:;">空气源热泵洽谈会</a></h2>
+						<p class="confer_money">洽谈金额：<span style="color: #FF6600;">370</span>万元</p>
+						<p class="confer_time">开始时间：2015-10-13&nbsp;&nbsp;08:30</p>
+						<p class="confer_time">报名截止：2015-10-08</p>
+						<p class="confer_time">报名人数：<span style="color: #ff6600;">202</span>人</p>
+						<div class="clearfix" style="width: 400px;">
+							<dl class="procedure">
+								<dt><div class="inner_box_2"><img src="images/conf_ico_07.png"></div></dt>
+								<dd>报名中</dd>
+							</dl>
+							<dl class="procedure">
+								<dt><div class="inner_box_2"><img src="images/conf_ico_08.png"></div></dt>
+								<dd>报名截止</dd>
+							</dl>
+							<dl class="procedure">
+								<dt><div class="inner_box_2"><img src="images/conf_ico_13.png"></div></dt>
+								<dd>洽谈中</dd>
+							</dl>
+							<dl class="procedure">
+								<dt><div class="inner_box_2"><img src="images/conf_ico_10_1.png"></div></dt>
+								<dd style="color:#0782c3;">洽谈结束</dd>
+							</dl>
+						</div>
+						<div class="enroll_box clearfix">
+							<a href="javascript:;" class="enroll_btn_wybm">查看详情</a>
+						</div>
+					</li>
+					<li>
+						<h2><a href="javascript:;">消防工程设备大采购</a></h2>
+						<p class="confer_money">洽谈金额：<span style="color: #FF6600;">160</span>万元</p>
+						<p class="confer_time">开始时间：2015-10-13&nbsp;&nbsp;08:30</p>
+						<p class="confer_time">报名截止：2015-10-08</p>
+						<p class="confer_time">报名人数：<span style="color: #ff6600;">232</span>人</p>
+						<div class="clearfix" style="width: 400px;">
+							<dl class="procedure">
+								<dt><div class="inner_box_2"><img src="images/conf_ico_07.png"></div></dt>
+								<dd>报名中</dd>
+							</dl>
+							<dl class="procedure">
+								<dt><div class="inner_box_2"><img src="images/conf_ico_08.png"></div></dt>
+								<dd>报名截止</dd>
+							</dl>
+							<dl class="procedure">
+								<dt><div class="inner_box_2"><img src="images/conf_ico_13.png"></div></dt>
+								<dd>洽谈中</dd>
+							</dl>
+							<dl class="procedure">
+								<dt><div class="inner_box_2"><img src="images/conf_ico_10_1.png"></div></dt>
+								<dd style="color:#0782c3;">洽谈结束</dd>
+							</dl>
+						</div>
+						<div class="enroll_box clearfix">
+							<a href="javascript:;" class="enroll_btn_wybm">查看详情</a>
+						</div>
+					</li>
+				</ul>
+				<!-- 			<div class="page_list">
+					<a href="javascript:;">上一页</a>
+					<a href="javascript:;" class="on">1</a>
+					<a href="javascript:;">2</a>
+					<a href="javascript:;">3</a>
+					<a href="javascript:;">4</a>
+					<a href="javascript:;">下一页</a>
+				</div> -->
+				<p class="page page1">
+					<em>共24条记录</em>
+					<a id="prev" class="nor" href="javascript:;">上一页</a>
+					<span>1</span>
+					<a href="javascript:;">2</a>
+					<!--<a href="javascript:;">3</a>
+					<a href="javascript:;">4</a> ...
+					<a>10</a>-->
+					<a id="next" href="javascript:;">下一页</a>
+					<em class="all">共2页</em>
+					<label>到第</label>
+					<input type="text" class="input_page" value="">
+					<label>页</label>
+					<input type="button" class="btn_queding" value="确定">
+				</p>
+			</div>
+		</div>
+		<!--footer-->
+		<div class="foot_channel">
+		    <ul class="foot_channel_ul clearfix">
+		        <li>
+		            <dl class="foot_channel_dl clearfix">
+		                <dt class="item1"></dt>
+		                <dd>
+		                    <h3>会员服务</h3>
+		                    <ul class="foot_channel_nav">
+		                        <li><a href="javascript:;">会员注册</a></li>
+		                        <li><a href="javascript:;">登录</a></li>
+		                        <li><a href="javascript:;">会员认证</a></li>
+		                        <li><a href="javascript:;">子账号</a></li>
+		                    </ul>
+		                </dd>
+		            </dl>
+		        </li>
+		        <li>
+		            <dl class="foot_channel_dl clearfix">
+		                <dt class="item2"></dt>
+		                <dd>
+		                    <h3>采购&供应</h3>
+		                    <ul class="foot_channel_nav">
+		                        <li><a href="javascript:;">发布供应信息</a></li>
+		                        <li><a href="javascript:;">发布求购信息</a></li>
+		                        <li><a href="javascript:;">查找供应商</a></li>
+		                        <li><a href="javascript:;">查找采购商</a></li>
+		                    </ul>
+		                </dd>
+		            </dl>
+		        </li>
+		        <li>
+		            <dl class="foot_channel_dl clearfix">
+		                <dt class="item3"></dt>
+		                <dd>
+		                    <h3>金融服务</h3>
+		                    <ul class="foot_channel_nav">
+		                        <li><a href="javascript:;">账户查询</a></li>
+		                        <li><a href="javascript:;">账户管理</a></li>
+		                        <li><a href="javascript:;">贷款申请</a></li>
+		                        <li><a href="javascript:;">贷款查询</a></li>
+		                    </ul>
+		                </dd>
+		            </dl>
+		        </li>
+		        <li>
+		            <dl class="foot_channel_dl clearfix">
+		                <dt class="item4"></dt>
+		                <dd>
+		                    <h3>信用认证</h3>
+		                    <ul class="foot_channel_nav">
+		                        <li><a href="javascript:;">发布评价</a></li>
+		                        <li><a href="javascript:;">查看信用</a></li>
+		                        <li><a href="javascript:;">投诉举报</a></li>
+		                        <li><a href="javascript:;">信用积分规则</a></li>
+		                    </ul>
+		                </dd>
+		            </dl>
+		        </li>
+		        <li class="last">
+		            <dl class="foot_channel_dl clearfix">
+		                <dt class="item5"></dt>
+		                <dd>
+		                    <h3>交易&安全</h3>
+		                    <ul class="foot_channel_nav">
+		                        <li><a href="javascript:;">购买商品</a></li>
+		                        <li><a href="javascript:;">安全中心</a></li>
+		                        <li><a href="javascript:;">密码服务</a></li>
+		                        <li><a href="javascript:;">资金托管</a></li>
+		                    </ul>
+		                </dd>
+		            </dl>
+		        </li>
+		    </ul>
+		</div>
+		<div id="footer">
+		    <div id="footer_box">
+		       
+		        <!--site info-->
+		        <div class="footer_site_info">
+		            <div class="footer_nav">
+		                <a href="javascript:;" class="blue" style="margin-right:20px;">关于我们</a>
+		                <a href="javascript:;" class="blue" style="margin-right:20px;">服务条款</a>
+		                <a href="javascript:;" class="blue" style="margin-right:20px;">免责声明</a>
+		                <a href="javascript:;" class="blue" style="margin-right:20px;">联系我们</a>
+		                <a href="javascript:;" class="blue" style="margin-right:20px;">网站地图</a>
+                        <span>© 版权所有 中国建设银行版权所有 京ICP备 13030780号</span>
+                        </div>
+                     <div class="footer_info">
+		                <p>总行地址：中国北京西城区金融大街25号 邮编：100033 手机网站：m.ccb.com</p>
+		            </div>
+                    <div class="footer_img"> 
+                    <a href="javascript:;"><img src="images/ico_bottom.png"/ class="icon_left"></a>
+                    <a href="javascript:;"><img src="images/ico_cxwz.png"></a>
+                   </div>
+		        </div>
+		        <!--/site info-->
+		    </div>
+		</div>
+		<!--/footer-->
+		<script type="text/javascript" src="js/jquery-1.8.2.min.js"></script>
+		<script type="text/javascript" src="js/jquery.SuperSlide.2.1.1.js"></script>
+		<script type="text/javascript" src="js/clamp.min.js"></script>
+		<script src="js/fa.base.js"></script>
+		<script type="text/javascript" src="js/clipboard.js"></script>
+		<script type="text/javascript" src="js/brush.js"></script>
+		<script src="js/kuCity.js"></script>
+		<script type="text/javascript">
+			$('.city_search').kuCity();
+		</script>
+		<script>
+			$('.dropdwn_group p').click(function(e){
+				var e=e||event;
+				e.stopPropagation();
+				$(this).siblings('.dropdwn_list').toggle();
+			})
+			$(document).click(function(){
+				$('.dropdwn_list').hide();
+			})
+			$('.dropdwn_list li').click(function(){
+				var txt=$(this).text();
+				$(this).parents('ul').siblings('p').html(txt);
+				$('.dropdwn_list').hide();
+			})
+		</script>
+					<script>
+			$(function(){
+			    $(".sel_city").hover(function(){
+					$(".citylist").show();
+					$(".citylist").mouseleave(function(){
+						$(".citylist").hide();
+					})
+					$(".gd,.gx").hover(function(){
+						$(this).children("a").addClass("on");
+						$(this).children("ul").show();
+					},function(){
+						$(this).children("a").removeClass("on");
+						$(this).children("ul").hide();
+					})
+					$(".citylist a").click(function(){
+						$(".select_city").val($(this).text());
+						$(".citylist").hide();
+						return false;
+					});
+				},function(){
+					$(".citylist").hide();
+				})
+
+				$("#price").hover(function(){
+					$(this).addClass("on");
+					$(".btn_price_sure").show();
+				},function(){
+					$(this).removeClass("on");
+					$(".btn_price_sure").hide();
+				})
+			    $("#minprice,#maxprice").focus(function(){
+					var txt_value = $(this).val();
+					if(txt_value==this.defaultValue){
+						$(this).val("");
+					}
+				});
+				$("#minprice,#maxprice").blur(function(){
+					var txt_value = $(this).val();
+					if(txt_value==""){
+						$(this).val(this.defaultValue)
+
+					}
+				})
+				function checkBox(opt,class1,class2){
+					var $opt = $(opt),
+						$class1 = class1,
+						$class2 = class2;
+					$opt.toggle(function() {
+						$(this).removeClass($class1).addClass($class2);
+						$(this).children("input").attr("checked", "checked");
+					},function() {
+						$(this).removeClass($class2).addClass($class1);
+						$(this).children("input").removeAttr("checked");
+					});	
+				}
+				var mys = function (ms) {
+				    var ms = $(ms.ms),
+				        btn = ms.find("h5"),
+				        box = ms.find("ul"),
+				        item = box.children("li");
+				    ms.hover(function(){
+				        box.show();
+				        $(".citylist2").hide();
+				    },function(){
+				    	box.hide();
+				    })
+				    box.bind("mouseleave", function () {
+				        $(this).hide();
+				    });
+				    item.bind("click", function () {
+				        var value = $(this).text();
+				        btn.text(value);
+				        box.hide();
+				    })
+				}
+				mys({ ms: "#manage" });
+				mys({ ms: "#time" });
+				mys({ ms: "#page" });
+				checkBox(".contact_checkbox","contact_unchecked","contact_checked");
+			})
+			</script>
+<script type="text/javascript">
+//=点击展开关闭效果=
+function openShutManager(){
+	if ( $('#pstyle').attr('class')=='category_list_more')
+	{
+		$('#pstyle').removeClass('category_list_more');
+		$('#pstyle').addClass('category_list_more1')
+		$('#showCat').show();
+		$('#text').html('收起');
+	}
+	else
+	{
+		$('#pstyle').removeClass('category_list_more1');
+		$('#pstyle').addClass('category_list_more')
+		$('#showCat').hide();
+		$('#text').html('更多');
+	}
+}
+</script>
+	</body>
+
+</html>
+<script>
+(function($){
+	$.fn.extend({
+		'toSelect':function(){
+			var $this = $(this);
+			var option = this.next('ul.option');
+			
+			this.click(function(){
+				option.toggle(1,function(){ 
+					if(option.is(':visible')){ 
+					  	$this.addClass("selecton");
+						$(document).bind('click',function(e){
+							if($(e.target).attr('class') == 'hover'){ 
+								return false;
+							}
+							option.hide();	
+							$(document).off();		
+							$this.removeClass("selecton");					
+						})
+					}
+					else{
+						$this.removeClass("selecton");
+						$(document).off();
+					}
+				});
+			})
+			option.find('a').click(function(){
+				if($this.attr('class') != 'hover'){
+					$this.next('ul.option').hide();
+					$this.find('span').html($(this).html());
+					$(".select").removeClass("selecton");
+					return_fun($this.find('span').html());	
+				}
+			})
+		}
+	})
+})(jQuery);
+$(function(){
+	$('div.select').each(function(){
+		$(this).toSelect()
+	});
+})
+</script>

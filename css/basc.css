@@ -1,0 +1,352 @@
+﻿#top{
+	position:relative;
+	border-style: solid;
+	border-width: 2px 0 1px 0;
+	border-color: #13a1ed #eee #eee;
+	height:32px;
+	line-height:32px;
+	width:100%;
+	background-color: #f7f7f7;
+}
+.top_warp, #header, #nav, #main, #footer_box {
+    width: 1200px;
+    margin: 0 auto;
+    text-align: left;
+    content: "";
+    display: table;
+    clear: both;
+}
+.top_left{
+    display: inline-block;
+}
+.top_right{
+    float:right;
+
+}
+.top_left span,.top_left a{
+    float:left;
+    margin-right: 10px;
+}
+
+.top_left a:hover{
+    color:rgb(255,102,0);
+}
+.top_tel {
+    color: #000;
+    margin: 0px 18px 0 0;
+}
+.top_tel em{
+    color:#fe0000
+}
+.on_time_service{
+    background: url(../images/user_search/jst_pic.png) left 52%  no-repeat;
+    height: 25px;
+    padding-left: 20px;
+    margin: 0px 14px 0 0;
+}
+.cs_online{
+    background: url(../images/icon_zxkf.jpg) left center no-repeat;
+    height: 18px;
+    line-height: 20px;
+    padding-left: 20px;
+    margin: 6px 5px 0 0;
+}
+.cart_list{
+    height: 28px;
+    padding: 5px 4px 0 6px;
+    line-height: 22px;
+    border-left: 1px solid #f7f7f7;
+    border-right: 1px solid #f7f7f7;
+
+}
+.cart_num{
+    color: #ff6600;
+    font-weight: bold;
+}
+.top_nav_link{
+    margin:0 5px;
+}
+.cart_list .arrow_down {
+    width: 8px;
+    height: 4px;
+    float: right;
+    margin: 10px 0 0 3px;
+    background: url(../images/arrow.png) 0 0;
+    background-repeat: no-repeat;
+}
+#header{
+    padding-top:20px;
+    height:90px;
+}
+#header .search {
+float: right;
+width: 470px;
+padding-top: 17px;
+}
+#header .search dt {
+position: relative;
+height: 22px;
+line-height: 22px;
+}
+#header .search dd .search_box {
+height: 36px;
+}
+#header .input_search {
+float: left;
+width: 313px;
+height: 20px;
+padding: 4px 32px;
+background: url(../images/icon_search.jpg) no-repeat 6px 6px;
+border: 4px solid #13a1ed;
+color: #9d9d9d;
+font-size: 14px;
+line-height: 20px;
+}
+#header .btn_search {
+float: left;
+width: 85px;
+height: 36px;
+background-color: #13a1ed;
+border: 0;
+cursor: pointer;
+text-align: center;
+color: #fff;
+font-size: 16px;
+font-weight: bold;
+}
+.search dd .hot_search {
+padding-top: 6px;
+line-height: 20px;
+}
+.hot_search span {
+color: #999;
+}
+.search dd .hot_search {
+line-height: 20px;
+}
+.hot_search a {
+padding: 0 5px;
+}
+.hot_search a.orange {
+color: #f60;
+}
+.header_right{
+    width:470px;
+    float:right
+}
+.search_tab{
+    overflow: hidden;
+    width:470px;
+
+}
+.search_tab li{
+    float: left;
+    width: auto;
+    height: 23px;
+    line-height: 24px;
+    text-align: left;
+    margin-right: 25px;
+}
+.search_tab li.right{
+    float:right;
+    margin-right:15px;
+}
+.search_tab li.on a{
+    display: block;
+    color: #13a1ed;
+    font-weight: bold;
+}
+.search_box{
+    height:36px;
+}
+.search_input{
+    float:left;
+    background: url("../images/icon_search.jpg") no-repeat 6px 6px ;
+    height:28px;
+    width:308px;
+    border:4px solid #13a1ed;
+    border-right:none;
+    outline: none;
+    text-indent: 32px;
+}
+.search_btn{
+    float:left;
+    border:none;
+    background: #13a1ed url("../images/search_btn.png") no-repeat;
+    height:36px;
+    width:78px;
+    color:#fff;
+    text-align: center;
+    font-weight: 700;
+    cursor: pointer;
+}
+.search_btn_site{
+    float: right;
+    border:none;
+    background: #13a1ed url("../images/search_btn_site.png") no-repeat;
+    height:36px;
+    width:78px;
+    color:#fff;
+    text-align: center;
+    font-weight: 700;
+    cursor: pointer;
+}
+.hotkey_search{
+    overflow: hidden;
+    height:30px;
+    line-height:30px;
+}
+.hotkey_search span{
+    color:#999;
+}
+
+#nav{
+    height: 38px;
+    background: #13a1ed;
+    font-size: 16px;
+    font-weight: bold;
+    width: 1200px;
+    font-family: "Microsoft Yahei",tahoma,arial;
+}
+.nav_content{
+    height:38px;
+    line-height:38px;
+    width:100%;
+    color:#fff;
+}
+.nav_li{
+    position: relative;
+    float:left;
+}
+.nav_li a{
+    display:inline-block;
+    font-weight: 700;
+    color:#fff;
+    padding:0 30px;
+    height:38px;
+    text-decoration: none;
+}
+.nav_li.on a{
+    background:#006ca5;
+}
+.nav_li:hover a{
+    color:#006ca5;
+}
+.nav_li.on:hover a{
+    color:#fff;
+}
+.hot_icon {
+    width: 21px;
+    height: 12px;
+    background: url(../images/HOT.png) no-repeat;
+    float: right;
+    margin: 4px 0 0 2px;
+}
+
+ /*<---2015.12.7开始--->*/
+#footer_box{
+    width:100%;
+    background: #f6f6f6;
+    border-top: 1px solid #e8e8e8;
+    content: "";
+}
+.setMap_item{
+    width: 239px;
+    border-right: 1px solid #e8e8e8;
+    list-style: none;
+    float: left;
+    overflow: hidden;
+}
+.footer_site_info{
+    width: 100%;
+    height: 174px;/*90px*/
+    margin: auto;
+	background: #f6f6f6;
+}
+.footer_info{
+    font-family: 'arial';
+    width: 550px;
+    height: 12px;
+    line-height: 12px;
+	text-align:center;
+	margin:0 auto;
+	padding-bottom:10px;
+    color: #999999;/
+}
+.footer_nav{
+	text-align:center;
+	padding-top:30px;
+	padding-bottom:10px;
+    position: relative;
+	color:#999999;
+    width: 680px;
+	margin:0 auto;
+	font-family:‘宋体’;
+    list-style: none;
+}
+.footer_img{width:160px;height:40px;margin:0 auto;}/*<2015.12.7>*/
+.icon_left{margin:7px 10px;}
+.gray{
+    color:#999999;
+	font-family:'宋体';
+	margin-right:20px;}
+.footer_nav a{color:#999999;
+	font-family:'宋体';}
+.footer_nav a:hover{color:#ff6600;
+                    font-style:underline;}	
+	/*<---2015.12.7结束--->*/
+/*公共样式*/
+.clearfix:before,.clearfix:after{content: "";display: table;}
+.clearfix{zoom: 1}
+.clearfix:after{clear: both}
+.fl{float: left;}
+.fr{float: right;}
+
+.bg_blue{background-color: #3366cc;}
+
+.fc_red{color:#ff6600; }
+.fc_blue{color: #3366cc;}
+.fc_grey{color: #999;}
+
+.fw_bold{font-weight: bold;}
+
+.fs_12{font-size: 12px;}
+.fs_14{font-size: 14px;}
+.fs_16{font-size: 16px;}
+.fs_18{font-size: 18px;}
+.fs_20{font-size: 20px;}
+.fs_22{font-size: 22px;}
+
+.c_p{cursor: pointer;}
+.w1200{width: 1200px;margin: auto}
+/*新增*/
+.condition_box .consearchright{float:right;display: inline-block;width:110px;height: 24px;
+ line-height: 24px;margin-right: 10px;}
+.condition_box .consearchright .fa_icon{width: 21px;height: 22px;
+background: url(../images/user_search/new_icon_search2.png) left 50% no-repeat;
+margin-right: 3px;display: inline-block;position: relative;top: 4px;}
+.condition_box .consearchright a{line-height: 24px;position: relative;top: -2px;}
+.result_list li div.more_list_all{width: 130px;height: 16px;display: inline-block;font-size: 12px;}
+.result_list li a span.more_list1{width:55px;height: 16px;background: url(../images/user_search/new_icon_search3.png) no-repeat;
+color: #fff;margin-left: 10px;text-align: center;line-height: 16px;float: left;display: inline;}
+.result_list li a span.more_list2{width:43px;height: 16px;background: #e21020;
+color: #fff;margin-left: 10px;display: inline-block;text-align: center;line-height: 16px;}
+
+
+
+
+/* 通用脚部 */
+.foot_channel { width: 100%; height: 173px; margin: 0 auto; background-color: #f6f6f6; border-top: 1px solid #e8e8e8; overflow: hidden; }
+.foot_channel_ul { width: 1200px; height: 128px; margin: 25px auto 20px;background-color: #f6f6f6;}
+.foot_channel_ul li { float: left; width: 240px; height: 128px; }
+.foot_channel_dl dt { display: inline; float: left; width: 40px; height: 40px; margin: 4px 0 0 30px; background-image: url(../images/foot/icon_foot.png); background-repeat: no-repeat; }
+.foot_channel_dl dt.item1 { background-position: 0 0; }
+.foot_channel_dl dt.item2 { background-position: 0 -40px; }
+.foot_channel_dl dt.item3 { background-position: 0 -80px; }
+.foot_channel_dl dt.item4 { background-position: 0 -120px; }
+.foot_channel_dl dt.item5 { background-position: 0 -160px; }
+.foot_channel_dl dd { float: right; width: 158px; margin-top: 2px; }
+.foot_channel_dl dd h3 { height: 20px; margin-bottom: 12px; line-height: 20px; color: #333; font-size: 14px; }
+.foot_channel_dl dd li { width: 170px; height: 20px; margin-bottom: 2px; border: 0; line-height: 20px; }
+.foot_channel_dl dd li a { color: #333; }
+.foot_channel_dl dd li a:hover { color: #f60; }

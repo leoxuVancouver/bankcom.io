@@ -1,0 +1,677 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="../favicon.ico" rel="icon" type="image/x-icon" />
+<title>报名名单</title>
+<link href="css/basic.css" rel="stylesheet" type="text/css" />
+<link href="css/public.css" rel="stylesheet" type="text/css" />
+<link href="css/swzx_style.css" rel="stylesheet" type="text/css" />
+<link href="css/contain.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="css/qt_bmmd.css"/>
+<script src="js/jquery-1.8.2.min.js"></script>
+<script src="js/js.js"></script>
+<script src="js/public.js"></script>
+<script type="text/javascript" src="js/demoData.js"></script>
+<script type="text/javascript" src="data_nyr/js/laydate.js"></script>
+<!--<style type="text/css">
+	.conTable tr td:nth-of-type(7) {
+width: 70px;
+}
+</style>
+-->
+</head>
+
+<body>
+<div id="phd_userinfo">
+	<div class="phd_userinfo">
+		 <div class="phd_userinfo_pool">
+			<div class="phd_userinfo_left">
+			<span class="pr5">JAMES 欢迎来到善融商务企业商城！</span>
+			<a href="javascript:;"><span class="email">(10)</span></a>
+			<a href="index.html"><span class="pl5">商城首页</span></a>
+			<a href="javascript:;"><span class="pl5">[退出]</span></a>
+			
+			</div>
+			<ul class="phd_userinfo_right">
+				<li>客服热线：<span class="red">95533&nbsp;#056</span></li>
+			 	<li class="jst"><a href="javascript:;">即时通</a></li>			
+				<li class="zxkf"><a href="javascript:;">在线客服</a></li>
+				<li class="jhd">进货单<span>0</span>件</li>
+				<li class="sczh"><a href="javascript:;">商城账户</a></li>
+				<li class="sczh"><a href="javascript:;">帮助中心</a></li>
+				<li class="sczh"><a href="javascript:;">建行首页</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+<div id="phd">
+	<div class="phd_pool">	
+	    <li class="phd_li"><a href="javascript:;"><span id="gosearch1" class="blblue" onclick="c1()">产品</span></a></li>
+		<li class="phd_li"><a href="javascript:;"><span id="gosearch2" class="" onclick="c2()">公司</span></a></li>
+		<li class="phd_li" style="width:65px;"><a href="javascript:;"><span id="gosearch3" class="" onclick="c3()">求购信息</span></a></li>
+		<li class="phd_li" style="background:none;"><a href="javascript:;"><span id="gosearch4" class="" onclick="c4()">资讯</span></a></li>
+		<a href="javascript:;"><span class="phd_search_super">高级搜索<span></span></span></a>
+		<br>
+		<!--全局搜索开始-->
+		<div class="phd_search_icon"><img src="images/phd_search_icon_17x18.png"></div>
+		<div class="phd_searchbar"><input type="text" class="phd_search_input1" value="请输入关键字">
+		<span class="phd_search_word">搜&nbsp;索</span></div>
+		<span class="phd_search_hit">热门搜索：
+		<a href="javascript:;"><span class="m5">移动电源</span></a>
+		<a href="javascript:;"><span class="m5 orange">红木家具</span></a>
+		<a href="javascript:;"><span class="m5">化学</span></a>
+		<a href="javascript:;"><span class="m5">家纺</span></a>
+		<a href="javascript:;"><span class="m5">茶叶</span></a>
+		<a href="javascript:;"><span class="m5">展会</span></a></span>
+	</div>
+	<!--全局搜索结束-->
+</div>
+<div id="phd_nav">	
+	<div class="phd_nav_first_pool">
+	<span class="phd_nav_help"></span>
+    <li class="phd_nav_first"><a class="phd_nav_first" href="javascript:;"><span>我的首页</span></a></li>
+		<li class="phd_nav_first"><a class="phd_nav_first" href="javascript:;"><span>供应服务
+</span></a></li>
+	<li class="phd_nav_first"><a class="phd_nav_first" href="javascript:;"><span>采购服务
+</span></a></li>
+	<li class="phd_nav_first"><a class="phd_nav_first" href="javascript:;"><span>会员服务</span></a></li>
+	<li class="phd_nav_first"><a class="phd_nav_first" href="javascript:;"><span>信用管理</span></a></li>
+	<li class="phd_nav_first"><a class="phd_nav_first" href="javascript:;"><span>企业空间</span></a></li>
+	<li class="phd_nav_first"><a class="phd_nav_first" href="javascript:;"><span>资金托管</span></a></li>
+	<li class="phd_nav_first"><a class="phd_nav_first" href="javascript:;"><span>融资中心</span></a></li>
+	<li class="phd_nav_first"><a class="phd_nav_first" href="javascript:;"><span>营销活动</span></a></li>
+	<li class="phd_nav_first_tab"><a class="phd_nav_first phd_nav_first_now" href="javascript:;"><span>我的助手</span></a></li>
+	</div>
+</div>
+<div class="wrap">
+	<div class="pbd_breadlink">
+		<span>您所在的位置：</span><a href="javascript:;"><span>商务中心</span></a> &gt; <span>我的助手</span> &gt; <span>洽谈会管理</span>
+	</div>
+	<div class="phd_dp_wrap clearfix">
+		<div class="phd_dp_sider fl">
+			<!--<div class="dp_apply_avatar"><a href="javascript:;"><img src="../images/pic_fylde.jpg" alt="广研测试总公司" /></a></div>
+			<h3>广研测试总公司</h3>
+			<dl class="dp_apply_nav">
+				<dt>账号管理</dt>
+				<dd>
+					<ul>
+						<li><a href="javascript:;" class="on">账号设置</a></li>
+						<li><a href="javascript:;">账号安全</a></li>
+						<li><a href="javascript:;">E积分管理</a></li>
+						<li><a href="javascript:;">客服管理</a></li>
+						<li><a href="javascript:;">商城账户管理</a></li>
+					</ul>
+				</dd>
+			</dl>-->
+            <h4 class="h4_big_title">我的助手</h4>
+            <dl class="dp_apply_nav">
+                <dt class="on">洽谈会管理</dt>
+                <dd style="display:block">
+                    <ul>
+                        <li><a href="洽谈会申办.html">洽谈会申办</a></li>
+                        <li><a href="洽谈会列表页.html" target="_blank">洽谈会报名</a></li>
+                        <li><a href="qt_qthsb.html"  class="on">我申办的洽谈会</a></li>
+                        <li><a href="我报名的洽谈会.html">我报名的洽谈会</a></li>
+                        <!--<li><a href="我管理的洽谈会.html">我管理的洽谈会</a></li>-->              
+                    </ul>
+                </dd>
+            </dl>
+		</div>
+		<div class="phd_dp_main fr">
+			<div class="dp_apply_con">
+				<div class="dp_apply_top"></div>
+				<div class="dp_apply_center ">
+					<h3>报名名单</h3>
+					<dl class="account_dl">
+						<dd style="margin-bottom:10px;margin-left:0;">
+                            <table style="margin-left:14px;">
+                                <tr>
+                                    <td>
+                                        <div class="select">
+                                            <span>请选择省</span>
+                                            <input type="hidden" class="define_input" value="">
+                                            <a class="hover" href="javascript:;"></a>
+                                        </div>
+                                        <ul class="option">
+                                            <li><a href="javascript:;">北京市</a></li>
+                                            <li><a href="javascript:;">上海市</a></li>
+                                            <li><a href="javascript:;">广东省</a></li>
+                                            <li><a href="javascript:;">福建省</a></li>
+                                            <li><a href="javascript:;">河北省</a></li>
+                                        </ul>
+                                   </td>
+                                   <td> 
+                                        <div class="select">
+                                            <span>请选择市</span>
+                                            <input type="hidden" class="define_input" value="">
+                                            <a class="hover" href="javascript:;"></a>
+                                        </div>
+                                        <ul class="option">
+                                            <li><a href="javascript:;">广州市</a></li>
+                                            <li><a href="javascript:;">佛山市</a></li>
+                                            <li><a href="javascript:;">汕头市</a></li>
+                                            <li><a href="javascript:;">深圳市</a></li>
+                                            <li><a href="javascript:;">珠海市</a></li>
+                                        </ul>
+                                    </td>
+                                    <th width="80" height="37" >报名方式：</th>
+                                    <td>
+                                        <div class="select">
+                                            <span>全部</span>
+                                            <input type="hidden" class="define_input" value="">
+                                            <a class="hover" href="javascript:;"></a>
+                                        </div>
+                                        <ul class="option">
+                                            <li><a href="javascript:;">自主报名</a></li>
+                                            <li><a href="javascript:;">邀请报名</a></li>
+                                        </ul>
+                                    </td>
+                                    <th width="80" height="37" >报名状态：</th>
+                                    <td>
+                                        <div class="select">
+                                            <span>全部</span>
+                                            <input type="hidden" class="define_input" value="">
+                                            <a class="hover" href="javascript:;"></a>
+                                        </div>
+                                        <ul class="option">
+                                            <li><a href="javascript:;">受邀中</a></li>
+                                            <li><a href="javascript:;">报名通过</a></li>
+                                            <li><a href="javascript:;">未接受邀请</a></li>
+                                            <li><a href="javascript:;">报名不通过</a></li>
+                                        </ul>
+                                    </td>								
+                                    <th width="80" height="37" >企业名称：</th>
+                                    <td>
+                                        <input type="text" class="search_txt" placeholder="输入企业名称进行查询" style="width:170px; height:24px;padding-left:5px;" >
+                                    </td>
+                                    <th>
+                                        <button class="search blueBtn">查询</button>
+                                    </th>
+                                </tr>
+                            </table>
+						</dd>
+					</dl>
+					
+				</div>
+                <table class="conTable">
+							<thead>
+									<tr>
+											<td>序号</td>
+											<td>企业名称</td>
+											<td>企业所在地</td>
+											<td>企业性质</td>
+											<td>报名时间 <img src="images/down_blue.png"></td>
+                                            <td>报名方式</td>
+											<td>报名状态</td>
+                                            <td>操作</td>
+									</tr>
+							</thead>
+							<tbody>
+									<tr class="zhsy">
+                                            <td>1</td>
+                                            <td class="tl pl10"><a href="javascript:;">广州市朗冠服装有限公司</a></td>
+											<td>广东省 广州市</td>
+											<td>私营企业</td>
+											<td>2015-12-15 19:00</td>
+                                            <td>自主报名</td>
+											<td id="status1">报名通过</td>
+											<td class="tl pl15">
+													<a href="javascript:;" id="btn_show_pop9">报名信息</a><span class="sx pl2" id="jjhide1">|</span>
+                                                    <a href='javascript:;' id="btn_show_pop1">拒绝</a>
+											</td>
+									</tr>
+                                    <tr>
+                                            <td>2</td>
+                                            <td class="tl pl10"><a href="javascript:;">清苑县桥一芳棉织厂</a></td>
+											<td>河北省 保定市</td>
+											<td>私营企业</td>
+											<td>2015-12-14  18:00</td>
+                                            <td>自主报名</td>
+											<td>报名通过</td>
+											<td class="tl pl15">
+													<a href="javascript:;" title="">报名信息</a><span class="sx pl2">|</span>
+                                                    <a href='javascript:;' >拒绝</a>
+											</td>
+									</tr>
+                                    <tr>
+                                            <td>3</td>
+                                            <td class="tl pl10"><a href="javascript:;">泉州德诺织造有限公司</a></td>
+											<td>福建省 泉州市</td>
+											<td>私营企业</td>
+											<td>2015-12-13  19:00</td>
+                                            <td>自主报名</td>
+											<td>报名通过</td>
+											<td class="tl pl15">
+													<a href="javascript:;" title="">报名信息</a><span class="sx pl2">|</span>
+                                                    <a href='javascript:;' >拒绝</a>
+											</td>
+									</tr>
+                                    <tr>
+                                            <td>4</td>
+                                            <td class="tl pl10"><a href="javascript:;">泉州冠华实业贸易有限公司</a></td>
+											<td>福建省 泉州市</td>
+											<td>私营企业</td>
+											<td>2015-12-13  13:00</td>
+                                            <td>自主报名</td>
+											<td>报名不通过<img src="images/icon_fa_question.jpg" width="14" height="14" style="margin:-3px 0 0 2px" title="未提供含税含运费报价单。"></td>
+											<td class="tl pl15">
+											<a href="javascript:;" title="">报名信息</a></td>
+									</tr>                                  <tr>
+                                            <td>5</td>
+                                            <td class="tl pl10"><a href="javascript:;">福州豪旺纺织有限公司</a></td>
+											<td>福建省 福州市</td>
+											<td>私营企业</td>
+											<td>-</td>
+                                            <td>邀请报名</td>
+											<td>受邀中</td>
+											<td class="tl pl15">
+											<!-- <a href="javascript:;" title="">报名信息</a>
+													 <span class="sx pl2">|</span>
+                                                    <a href='javascript:;' >拒绝</a> -->
+											</td>
+									</tr>
+                                    <tr>
+                                            <td>6</td>
+                                            <td class="tl pl10"><a href="javascript:;">安溪县颍鑫工艺有限公司</a></td>
+											<td>福建省 泉州市</td>
+											<td>私营企业</td>
+											<td>-</td>
+                                            <td>邀请报名</td>
+											<td>受邀中</td>
+											<td class="tl pl15">
+													
+													<!-- <span class="sx pl2">|</span>
+                                                    <a href='javascript:;' >拒绝</a> -->
+											</td>
+									</tr>
+                                    
+                                    <tr>
+                                            <td>7</td>
+                                            <td class="tl pl10"><a href="javascript:;">厦门优得进出口有限公司</a></td>
+											<td>福建省 厦门市</td>
+											<td>私营企业</td>
+											<td>-</td>
+                                            <td>邀请报名</td>
+											<td>受邀中</td>
+											<td class="tl pl15">
+													
+													<!-- <span class="sx pl2">|</span>
+                                                    <a href='javascript:;' >拒绝</a> -->
+											</td>
+									</tr>
+                                    	<tr>
+                                            <td>8</td>
+                                            <td class="tl pl10"><a href="javascript:;">福州欣翔纺织品有限公司</a></td>
+											<td>福建省 福州市</td>
+											<td>私营企业</td>
+											<td>-</td>
+                                            <td>邀请报名</td>
+											<td>受邀中</td>
+											<td class="tl pl15">
+													
+													<!-- <span class="sx pl2">|</span>
+                                                    <a href='javascript:;' >拒绝</a> -->
+											</td>
+									</tr>
+                                    
+                                    <tr>
+                                            <td>9</td>
+                                            <td class="tl pl10"><a href="javascript:;">泉州市海天心进出口有限公司</a></td>
+											<td>福建省 泉州市</td>
+											<td>私营企业</td>
+											<td>-</td>
+                                            <td>邀请报名</td>
+											<td>受邀中</td>
+											<td class="tl pl15">
+													
+													<!-- <span class="sx pl2">|</span>
+                                                    <a href='javascript:;' >拒绝</a> -->
+											</td>
+									</tr>
+                                    <tr>
+                                            <td>10</td>
+                                            <td class="tl pl10"><a href="javascript:;">福建六维商贸有限公司</a></td>
+											<td>福建省 漳州市</td>
+											<td>私营企业</td>
+											<td>-</td>
+                                            <td>邀请报名</td>
+											<td>受邀中</td>
+											<td class="tl pl15">
+													<!-- <span class="sx pl2">|</span>
+                                                    <a href='javascript:;' >拒绝</a> -->
+											</td>
+									</tr>
+                                    
+                                   
+							</tbody>
+					</table>
+                
+				<p class="page page1">
+					<em>共29条记录</em>
+					<a id="prev" class="nor" href="javascript:;">上一页</a>
+					<span>1</span>
+					<a href="javascript:;">2</a>
+					<a href="javascript:;">3</a>
+					<!--<a href="javascript:;">4</a> ...
+					<a>3</a>-->
+					<a id="next" href="javascript:;">下一页</a>
+					<em class="all">共3页</em>
+					<label>到第</label>
+					<input type="text" class="input_page" value="">
+					<label>页</label>
+					<input type="button" class="btn_queding" value="确定">
+				</p>
+				<p style="height:20px;"></p>
+			</div>
+            
+		</div>
+	</div>
+</div>
+		<!--footer-->
+		<div id="footer">
+		    <div id="footer_box">
+		       
+		        <!--site info-->
+		        <div class="footer_site_info">
+		            <div class="footer_nav">
+		                <a href="javascript:;" class="gray">关于我们</a>
+		                <a href="javascript:;" class="gray">服务条款</a>
+		                <a href="javascript:;" class="gray">免责声明</a>
+		                <a href="javascript:;" class="gray">联系我们</a>
+		                <a href="javascript:;" class="gray">网站地图</a>
+                        <span>© 版权所有 中国建设银行版权所有 京ICP备 13030780号</span>
+                        </div>
+                     <div class="footer_info">
+		                <p>总行地址：中国北京西城区金融大街25号 邮编：100033 手机网站：m.ccb.com</p>
+		            </div>
+                    <div class="footer_img"> 
+                    <a href="javascript:;"><img src="images/ico_bottom.png"/ class="icon_left"></a>
+                    <a href="javascript:;"><img src="images/ico_cxwz.png"></a>
+                   </div>
+		        </div>
+		        <!--/site info-->
+		    </div>
+		</div>
+		<!--/footer-->
+<div class="mask"></div>
+<!--弹出框-->
+<div id="pop1" class="fa_dialog">
+	<table>
+		<thead>
+			<tr>
+				<th>拒绝报名<span class="fa_close">X</span></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>
+					<div style="margin-left:19px;line-height:30px">请填写拒绝原因：</div>
+					<textarea id="textarea_y" style="margin:0 0 20px 19px;width:280px;height:80px;border: 1px solid #ccc;" rows="7px" cols="60"></textarea>
+					<span><b style="color:#f60;" id="add_count2">0</b>/100</span>
+				</td>
+			</tr>
+		</tbody>
+		<tfoot>
+			<tr>
+				<td>
+					<input type="button" class="btn_fa_confirm" id="jujue_confirm1" value="确认" />
+					<input type="button" class="btn_fa_cancel" value="取消" />
+				</td>
+			</tr>
+		</tfoot>
+	</table>
+</div>
+<!--查看报名信息弹出框-->
+<div id="pop9" class="fa_dialog9" >
+	<table>
+		<thead>
+			<tr style="height:40px;">
+				<th >报名信息<span class="fa_close">X</span></th>
+			</tr>
+		</thead>
+		<tbody style="height:580px;">
+			<!-- 报名信息start  -->
+			<table class="fa_dialog9_bd">
+						<tr>
+							<td class="bdleft">企业名称：</td>
+							<td class="bdright">广州市朗冠服装有限公司</td>
+						</tr>
+						<tr>
+							<td class="bdleft">企业所在地：</td>
+							<td class="bdright">广东省广州市</td>
+						</tr>
+						<tr>
+							<td class="bdleft">企业性质：</td>
+							<td class="bdright">私营企业</td>
+						</tr>
+						<tr>
+							<td class="bdleft">联系人：</td>
+							<td class="bdright">王武</td>
+						</tr>
+						<tr>
+							<td class="bdleft">联系电话：</td>
+							<td class="bdright">13828636235</td>
+						</tr>
+						<tr>
+							<td class="bdleft" style="vertical-align:top;">企业简介：</td>
+							<td class="bdright"><div class="div_content_02" style="border:none; padding:0; margin:0;">
+														广州市朗冠服装有限公司经销的服装、服饰、布匹品种齐全、价格合理。广州市朗冠服装有限公司实力雄厚，重信用、守合同、保证产品质量，广州市朗冠服装有限公司经销的服装、服饰、布匹品种齐全、价格合理。
+													</div></td>
+						</tr>
+						<tr>
+							<td class="bdleft">合作物流企业：</td>
+							<td class="bdright">顺丰速运</td>
+						</tr>
+						<tr>
+							<td class="bdleft">海外合作企业：</td>
+							<td class="bdright">法国 Yves Salomon</td>
+						</tr>
+						<tr>
+							<td class="bdleft">下载附件：</td>
+							<td class="bdright"><div class="fileInput left" style="background:url(images/xiazai.png) no-repeat">
+															   <input type="file" name="upfile" id="upfile" class="upfile" onchange="document.getElementById('upfileResult').innerHTML=this.value">
+															   <input class="upFileBtn" type="button" value="上传图片" onclick="document.getElementById('upfile').click()" disabled="">
+															</div>
+															<span class="tip left" id="upfileResult">报名文件.doc</span></td>
+						</tr>
+			</table>
+			<!-- 报名信息end  -->
+		</tbody>
+	</table>
+</div>
+<!-- 下拉菜单start -->
+<script>
+(function($){
+	$.fn.extend({
+		'toSelect':function(){
+			var $this = $(this);
+			var option = this.next('ul.option');
+			
+			this.click(function(){
+				option.toggle(1,function(){ 
+					if(option.is(':visible')){ 
+					  	$this.addClass("selecton");
+						$(document).bind('click',function(e){
+							if($(e.target).attr('class') == 'hover'){ 
+								return false;
+							}
+							option.hide();	
+							$(document).off();		
+							$this.removeClass("selecton");					
+						})
+					}
+					else{
+						$this.removeClass("selecton");
+						$(document).off();
+					}
+				});
+			})
+			option.find('a').click(function(){
+				if($this.attr('class') != 'hover'){
+					$this.next('ul.option').hide();
+					$this.find('span').html($(this).html());
+					$(".select").removeClass("selecton");
+					return_fun($this.find('span').html());	
+				}
+			})
+		}
+	})
+})(jQuery);
+$(function(){
+	$('div.select').each(function(){
+		$(this).toSelect()
+	});
+})
+</script>
+<!-- 下拉菜单end  -->
+
+<!--/*<script>
+$(function(){
+	$(".dp_apply_nav dt").bind("click",function(){
+		$(this).toggleClass("on");
+		$(this).next("dd").slideToggle();
+	});
+	var all = $('.table_site th :checkbox'),
+  		items = $(':checkbox[name=items]');
+    all.bind("click",function(){
+        items.add(all).attr('checked', this.checked);
+    });
+    items.click(function(e){
+        e.stopPropagation();
+        all.attr('checked', items.size() == items.filter(':checked').size());
+    });
+
+    $(".show_info").toggle(function(){
+    	$(this).text("点击展开");
+    	$(this).parent("dt").siblings("dd").slideUp();
+    },function(){
+    	$(this).text("点击收起");
+    	$(this).parent("dt").siblings("dd").slideDown();
+    })
+	$(".phd_dp_sider").css("height",$(".phd_dp_main").height()-12);
+	$(".dp_apply_nav").css("height",$(".phd_dp_sider").height()-$(".phd_dp_sider .h4_big_title").height()-40)
+})
+enterAccount();
+
+	/*表格动态增减行*/
+	$(".product_table tr").find('.add_redu .add').click(function(){
+		var oTr='<tr><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td><td class="add_redu"><span class="add">+</span><span class="reduce">-</span></td></tr>';
+		$(".product_table").append(oTr);
+	})
+</script>
+<script type="text/javascript">
+
+var start = {
+    elem: '#demo',
+    format: 'YYYY-MM-DD',
+    min: laydate.now(), //设定最小日期为当前日期
+    max: '2099-06-16', //最大日期
+    istime: true,
+    istoday: false,
+    choose: function(datas){
+         end.min = datas; //开始日选好后，重置结束日的最小日期
+         end.start = datas //将结束日的初始值设定为开始日
+    }
+};
+var end = {
+    elem: '#demo2',
+    format: 'YYYY-MM-DD',
+    min: laydate.now(),
+    max: '2099-06-16',
+    istime: true,
+    istoday: false,
+    choose: function(datas){
+        start.max = datas; //结束日选好后，重置开始日的最大日期
+    }
+};
+laydate(start);
+laydate(end); 
+
+ time_old = function(){
+    var show_ts = document.getElementById('text_2');
+    var time1 = document.getElementById("time1").innerHTML;
+    var time2 = document.getElementById("time2").innerHTML;   
+    var first = document.getElementById("demo").value;  
+    var second = document.getElementById("demo2").value;  
+    var data1 = Date.parse(first.replace(/-/g,   "/"));  
+    var data2 = Date.parse(second.replace(/-/g,   "/"));  
+    var datadiff = data2-data1;  
+    var time = 31*24*60*60*1000;       
+    if(first.length>0 && second.length>0){  
+              if(datadiff<0 /*||datadiff>time*/){  
+                 //alert("结束时间应大于开始时间1");  
+                 show_ts.style.display ='inline-block';
+                 return false;  
+              }else if(datadiff==0){
+                var time_j=time1.replace(':','')-time2.replace(':','')
+                 if(time_j>0||time_j==0){
+                  //alert("结束时间应大于开始时间2");  
+                  show_ts.style.display ='inline-block';
+                  return false;  
+                 }
+              }else{
+                show_ts.style.display ='none'; 
+              }  
+     } 
+ }  
+ 
+//删除
+$(".delete_1").click(function(){
+	$(".zhsy").hide();
+	})
+</script>-->
+<script type="text/javascript">
+
+/*拒绝报名-弹窗*/
+$("#btn_show_pop1").bind("click", function() {
+	$(".mask").css({
+		display: "block",
+		height: $(document).height()
+	});
+	$("#pop1").show();
+})
+$(".fa_close,.btn_fa_confirm,.btn_fa_cancel").bind("click", function() {
+	$(".fa_dialog").hide();
+	$(".mask").hide();
+})
+
+$('#textarea_y').focus(function(){
+	$(this).css('borderColor','#1995E6')
+}).blur(function(){
+	$(this).css({
+		'border':'1px solid #ccc',
+		'border-left-color': '#9a9a9a',
+		'border-top-color': '#9a9a9a'
+	})
+});
+// 字数限制
+$(document).on({
+	keyup:function(){public_function.textCounter('#textarea_y','#add_count2',100);testVal();},
+	keydown:function(){public_function.textCounter('#textarea_y','#add_count2',100);}
+})
+
+
+/*报名信息-弹窗*/
+$("#btn_show_pop9").bind("click", function() {
+	$(".mask").css({
+		display: "block",
+		height: $(document).height()
+	});
+	$("#pop9").show();
+})
+$(".fa_close").bind("click", function() {
+	$(".fa_dialog9").hide();
+	$(".mask").hide();
+})
+
+/*拒绝确认后，报名状态修改成报名不通过*/
+$("#jujue_confirm1").click(function(){
+	$("#status1").html('报名不通过<img src="images/icon_fa_question.jpg" width="14" height="14" style="margin:-3px 0 0 2px" title="资料不全。">');
+	$("#jjhide1").hide();
+	$("#btn_show_pop1").hide();
+})
+
+</script>
+</body>
+</html>

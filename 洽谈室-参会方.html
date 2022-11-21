@@ -1,0 +1,315 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="css/qts_admin.css"/>
+<link href="css/contain.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/jquery-1.8.2.min.js"></script>
+<script type="text/javascript" src="js/plugin.dragula.min.js"></script>
+<title>在线洽谈室</title>
+<style type="text/css">
+.gu-mirror {
+  position: fixed !important;
+  margin: 0 !important;
+  z-index: 9999 !important;
+}
+.gu-hide {
+  display: none !important;
+}
+.gu-unselectable {
+  -webkit-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  user-select: none !important;
+}
+.gu-transit {     /*拖拽对象本体*/
+  opacity: 0.2;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+  filter: alpha(opacity=20);
+}
+.gu-mirror {      /*拖拽对象镜像*/
+  opacity: 0.8;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+  filter: alpha(opacity=80);
+  cursor:move;
+}
+
+.clearfix{ *zoom:1}
+.clearfix:before,
+.clearfix:after{ display:table; line-height:0; content:""}
+.clearfix:after{ clear:both;}
+
+/*#single1{
+  background:#ddd;}
+#single1 p{
+  width:300px;
+  height:30px;
+  background:red;
+  margin:10px;
+  cursor: move;
+  cursor: grab;
+  cursor: -moz-grab;
+  cursor: -webkit-grab;
+  transition: all 0.4s ease-in-out;
+  float:left;
+}*/
+</style>
+	<style>
+	.btn_show_pop { display: inline-block; width: 88px; height: 28px; background-color: #1995e6; border: 1px solid #1995e6; color: #fff; font-size: 14px; text-align: center; line-height: 30px; cursor: pointer; }
+	.btn_show_pop:hover { background-color: #4eadeb; border: 1px solid #4eadeb; }
+
+	/*fa_dialog*/
+	.mask { display: none; position: absolute; top: 0; left: 0; z-index: 2; opacity: 0.5; filter: alpha(opacity=50); background-color: #000; width:100%; height:100%; }
+	.fa_dialog { display: none; position: fixed; top: 50%; left: 50%; width: 440px; height: 240px; margin: -120px 0 0 -220px; background-color: #fff; z-index: 999; font-family: 'Microsoft YaHei'; z-index: 3; }
+	.fa_dialog .fa_dialog_con { height: 156px; vertical-align: middle; font-size: 18px; font-weight: 400; color: #000;  }
+	.fa_dialog table { width: 440px; height: 240px; }
+	.fa_dialog table th { position: relative; height: 40px; background-color: #1995e6; font: 400 16px/40px 'Microsoft YaHei'; text-indent: 10px; color: #fff; text-align: left; }
+	.fa_dialog table th .fa_close { position: absolute; top: 8px; right: 10px; width: 24px; height: 24px; background: url(images/fa_dialog/icon_fa_close.jpg) no-repeat; cursor: pointer; text-indent: -999em; }
+	.fa_dialog table tbody td { text-align: center; font-size: 18px; font-weight: 400; }
+	.fa_dialog table tbody td h3 { margin-bottom: 10px; font: 400 18px/32px 'Microsoft YaHei'; }
+	.fa_dialog table tbody td h3 img { vertical-align: top;}
+	.fa_dialog table tbody td p { font-size: 14px; font-weight: 400; }
+	.fa_dialog table img { width: 32px; height: 32px; margin-right: 10px; vertical-align: middle; } 
+	.fa_dialog table tfoot td { height: 44px; background-color: #f0f0f0; border: 0; text-align: center; }
+	.fa_dialog table tfoot td .btn_fa_confirm,
+	.fa_dialog table tfoot td .btn_fa_cancel { width: 90px; height: 30px; background-image: url(images/btn-all-bg.png); background-repeat: no-repeat; border: 0; font: 400 14px/30px 'Microsoft YaHei'; color: #fff; text-align: center; cursor: pointer; }
+	.fa_dialog table tfoot td .btn_fa_confirm { background-position: 0 -581px; color: #fff; }
+	.fa_dialog table tfoot td .btn_fa_confirm:hover { background-position: -300px -581px; }
+	.fa_dialog table tfoot td .btn_fa_cancel { margin-left: 7px; background-position: 0 -663px; color: #1995e6; }
+	.fa_dialog table tfoot td .btn_fa_cancel:hover { background-position: -300px -663px; }
+	/*wsw 2015-11-28*/
+	.litle_menu_2 {
+    background: url(images/bg_3.png);
+    height: 35px;
+	}
+	.fa_dialog table{border-spacing: 0px;}
+	.fa_dialog .fa_dialog_content{float:left; text-align:left; margin-left:40px; width:360px; color:#333;}
+	.fa_dialog .fa_dialog_content dl dt{padding-bottom:10px; border-bottom:1px dashed #ccc; margin-bottom:20px; margin-top:4px;}
+	.fa_dialog .fa_dialog_content dl dd{font-size:14px; word-break:break-all}
+	.main_left_btn span a.qtq-hit{ background:#ccc; cursor:default;}
+	</style>
+</head>
+<body>
+<div class="container">
+  <div class="large_div">
+     <!--顶部-->  
+     <div class="top">
+        <a class="back_btn"></a>
+    </div>
+     <!--顶部-->  
+     <!--中间部分-->
+     <div class="main clearfix">
+        <div class="main_left">
+          <div class="main_left_talk">
+            <ul class="main_left_talk_tab">
+              <li class="hit">会议大厅</li>
+              <li id="qtq">洽谈区</li>
+            </ul>
+            <div class="main_left_talk_con">      
+               <div class="con" style="display:block; OVERFLOW-y: scroll; width:643px;HEIGHT: 287px;">
+				<p class="margin_btm">佛山市钰锦龙机械设备有限公司：欢迎参加善融商务企业商城在线洽谈会！</p>
+				<p style="color:red" class="margin_btm">【系统提示】杭州观琼建筑材料有限公司，请进入洽谈区，洽谈马上开始！</p>
+				<p style="color:#053B71">深圳市双力精工制造有限公司 <span class="meeting_time">(2015-12-06 08:27:55)</span></p>
+				<p class="margin_btm">大家好！非常荣幸参加在线洽谈！</p>
+				<p style="color:red" class="margin_btm">【系统提示】杭州观琼建筑材料有限公司，请进入洽谈区，洽谈马上开始！</p>
+				<p style="color:red" class="margin_btm">【系统提示】杭州观琼建筑材料有限公司，请进入洽谈区，洽谈马上开始！</p>
+				<p style="text-align:right;"><span style="color:#053B71">佛山市钰锦龙机械设备有限公司 </span><span class="meeting_time">(2015-12-06 08:28:16)</span><br />非常荣幸参加本次在线洽谈！</p>
+				<p><span style="color:#053B71">北京鸿安双保商贸中心</span> <span class="meeting_time">(2015-12-06 08:29:09)</span></p>
+				<p class="margin_btm">非常期待与主办方的洽谈！</p>
+				<p><span style="color:#053B71">廊坊金星化工有限公司</span> <span class="meeting_time">(2015-12-06 08:29:11)</span></p>
+				<p class="margin_btm">希望能和主办方合作愉快</p>
+				<p><span style="color:#053B71">中山市雨田环保设备有限公司</span> <span class="meeting_time">(2015-12-06 08:29:12)</span></p>
+				<p class="margin_btm">很荣幸能参加这次洽谈会</p>
+				<p><span style="color:#053B71">河间市北能盛世保温材料有限公司</span> <span class="meeting_time">(2015-12-06 08:29:42)</span></p>
+				<p class="margin_btm">大家好！非常荣幸能参加本次洽谈会。</p>
+              </div>
+              <div class="con" > 
+                  <p style="color:red" class="margin_btm">【系统提示】尊敬的客户您好，主办企业正在洽谈中，请您耐心等待。</p>
+              </div>
+            </div>
+          </div>
+          <div class="main_left_xiaoxi"></div>
+          <div class="main_left_fasong"><textarea name="content" cols="93" rows="5" style="border:0px; width:669px;"></textarea></div> 
+          <div class="main_left_btn">
+            <span><a href="javascript:void(0);" id="qtqa">发送</a></span>
+          </div>         
+        </div>
+        <div class="main_right">
+          <div class="main_right_up">
+            <p class="title">洽谈会信息</p>
+            <div class="content" style="height:122px">
+                <h3>鸿路钢构入驻善融平台，期待与您合作</h3>
+                <p>采购金额：3500万元</p>
+                <p>洽谈时间：08:30-16:00</p>
+                <p>管<span style="margin:0 6px">理</span>员 : 王明</p>
+                <p>联系电话：13448138828</p>
+            </div>
+          </div>
+          <div class="main_right_mid">
+             <dl>
+               <dt>温馨提示：</dt>
+               <dd id="dd"><ul id="left_scroll" style="padding-left:30px"><li>佛山市钰锦龙机械设备有限公司，您前面还有<span style="color:#f60;font-weight:bold;margin:0 3px">10</span>位在等待洽谈。</li></ul></dd>
+             </dl>
+          </div>
+          <div class="main_right_down" style="margin-top:12px;background:#fff;padding-bottom:20px">
+            <p class="title">主办企业</p>
+            <p class="company_name">安徽鸿路钢结构（集团）股份有限公司</p>
+            <dl class="company_info">
+              <dt><img src="images/qts_ico_9.png" alt="" /></dt>
+              <dd>联<span style="margin:0 6px">系</span>人：周先生</dd>
+            </dl>
+            <dl class="company_info">
+              <dt><img src="images/qts_ico_8.png" alt="" /></dt>
+              <dd>联系电话：13768328908</dd>
+            </dl>
+            <dl class="company_info">
+              <dt><img src="images/qts_ico_7.png" alt="" /></dt>
+              <dd>企业简介：			  安徽鸿路钢结构（集团）股份有限公司，致力于新型建材产品的研发、生产、制造和销售，目前主要产品有鸿路塑钢瓦、APVC塑钢瓦、合成树脂装饰瓦等新型建材。现拥有十二条进口鸿路塑钢瓦、APVC... <a href="#" class="more">>>详情</a></dd>
+            </dl>
+          </div>
+        </div>
+     </div>
+  </div>
+</div>     
+    <!--中间部分-->
+        <!--弹窗-->
+<div class="mask" style="display:none;z-index:99999999"></div>
+<div id="pop1" class="fa_dialog" style="display:none;">
+	<table>
+		<thead>
+			<tr>
+				<th>提示<span class="fa_close">X</span></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>
+					<div class="fa_dialog_content">
+                    	<dl>
+                        	<dt><img src="images/icon_fa_question.jpg">确认退出洽谈室？</dt>
+                            <dd>本场洽谈会结束后将不能再次进入洽谈室，如需查看聊天记录，请在洽谈会结束前作好保存。</dd>
+                        </dl>
+                    </div>
+				</td>
+			</tr>
+		</tbody>
+		<tfoot>
+			<tr>
+				<td>
+					<input type="button" class="btn_fa_confirm" value="确认">
+					<input type="button" class="btn_fa_cancel" value="取消">
+				</td>
+			</tr>
+		</tfoot>
+	</table>
+</div>
+</div>
+<script type="text/javascript">
+   /*无缝滚动*/
+  window.onload = function() {
+    var oUl = document.getElementById('left_scroll');
+
+    var oDiv = document.getElementById('dd');
+    var aLi = oUl.getElementsByTagName('li');
+
+    var speed = -1;
+
+    oUl.innerHTML += oUl.innerHTML;
+    oUl.style.width = aLi[0].offsetWidth * aLi.length + 'px';
+
+    function move() {
+      if (oUl.offsetLeft < -oUl.offsetWidth / 2) {
+        oUl.style.left = '0';
+      }
+      if (oUl.offsetLeft > 0) {
+        oUl.style.left = -oUl.offsetWidth / 2 + 'px';
+      }
+      oUl.style.left = oUl.offsetLeft + speed + 'px';
+    }
+    var timer = setInterval(move, 30);
+
+    oDiv.onmouseover = function() {
+      clearInterval(timer);
+    };
+
+    oDiv.onmouseout = function() {
+      timer = setInterval(move, 30);
+    };
+
+
+  }
+  //退出
+$('.back_btn').click(function(){
+	$('#pop1').show();
+	$(".mask").css({ display: "block", height: $(document).height() });
+});
+$('.btn_fa_confirm,.btn_fa_cancel,.fa_close').click(function(){
+	$('#pop1').hide();
+	$('.mask').hide();
+})
+$('.btn_fa_confirm').click(function(){
+	$('.container').hide();
+	window.close();
+})
+</script>
+</body>
+</html>
+<script type="text/javascript">
+    /*tab标签 start*/
+    $('.main_left_talk_tab li').click(function(){
+      $(this).addClass('hit').siblings().removeClass('hit');
+      $('.main_left_talk_con>div:eq('+$(this).index()+')').show().siblings().hide(); 
+	  $("#qtqa").removeClass('qtq-hit');
+    });
+	 $('#qtq').click(function(){
+      $("#qtqa").addClass('qtq-hit');
+    });
+    /*tab标签 end*/
+    /*参事企业 start*/
+/*    $('.lists li').click(function(){
+      $(this).addClass('now').siblings().removeClass('now');
+      $(this).siblings().children('div').hide();
+    });*/
+      // $('#first').toggle(function(){
+      //   $(this).animate({height:'34px'},'slow');
+      //   $(this).children('div').css("display","none"); 
+      // },function(){
+      //   $(this).animate({height:'139px'},'slow');
+      //   $(this).children('div').css("display","block");
+      // });
+/*    $('#first').toggle(function(){
+        $(this).removeClass('now');
+        $(this).children('div').css("display","none"); 
+      },function(){
+        $(this).addClass('now');
+        $(this).children('div').css("display","block");
+      });*/
+     /*数字 start*/
+/*     var num=$(".number:not('number3')");
+     for(var i=0;i<num.length;i++){
+        $('.number')[i].text(i+1).css({'color':'#fff','font-size':'12px;'});
+     }*/
+     /*数字 end*/
+     /*参事企业 end*/
+
+  dragula([$('#tuizhuai').get(0)], {
+    accepts: function (el, target, source, sibling) {
+      return true;         // elements can be dropped in any of the `containers` by default
+    },
+    revertOnSpill:false,
+    removeOnSpill: false,
+    direction:'vertical'
+  });
+  $('#first').toggle(function(){
+    $(this).animate({height:'34px'},'slow');
+    $(this).children('div').css("display","none"); 
+  },function(){
+    $(this).animate({height:'130px'},'slow');
+    $(this).children('div').css("display","block");
+  });
+
+  $('.lists_btn .tow').click(function(){
+    
+  })
+
+</script>

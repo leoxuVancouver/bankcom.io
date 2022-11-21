@@ -1,0 +1,868 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="../favicon.ico" rel="icon" type="image/x-icon" />
+<title>洽谈会申办</title>
+<link href="css/basic.css" rel="stylesheet" type="text/css" />
+<link href="css/basc.css" rel="stylesheet" type="text/css" />
+<link href="css/public.css" rel="stylesheet" type="text/css" />
+<link href="css/swzx_style.css" rel="stylesheet" type="text/css" />
+<link href="css/contain.css" rel="stylesheet" type="text/css" />
+<script src="js/jquery-1.11.3.min.js"></script>
+<script src="js/js.js"></script>
+<script type="text/javascript" src="js/demoData.js"></script>
+<script type="text/javascript" src="js/public.js"></script>
+<script type="text/javascript" src="data_nyr/js/laydate.js"></script>
+<style type="text/css">
+input,textarea{font-size:12px;font-family: "宋体",Tahoma;}
+#table3 td {border:1px solid #fff;}
+#table3 td input{border:1px solid #ddd !important;height: 22px;line-height: 22px;margin: 0;}
+.account_dl dd table td {
+padding-left:0px;
+}
+#table3 .account_dl dd table td input{
+padding-left:5px;
+}
+#table3 .add_redu{top: 2px; left:-7px;}
+/*wsw 2015-11-28*/
+.laydate_body .laydate_table td:hover,
+.laydate_body .laydate_table td.laydate_nothis:hover{background-color:#1995e6; color:#fff;cursor:pointer;}
+.laydate_body .laydate_table td.laydate_nothis{background:#fff;color: #999;cursor:text;}
+.laydate_body .laydate_table td.laydate_void:hover{background-color:#fff;}
+</style>
+</head>
+
+<body>
+
+<!--top-->
+<div id="phd_userinfo">
+
+	<div class="phd_userinfo">
+		 <div class="phd_userinfo_pool">
+			<div class="phd_userinfo_left">
+			<span class="pr5">JAMES 欢迎来到善融商务企业商城！</span>
+			<a href="javascript:;"><span class="email">(10)</span></a>
+			<a href="index.html"><span class="pl5">商城首页</span></a>
+			<a href="javascript:;"><span class="pl5">[退出]</span></a>
+			
+			</div>
+			<ul class="phd_userinfo_right">
+				<li>客服热线：<span class="red">95533&nbsp;#056</span></li>
+			 	<li class="jst"><a href="javascript:;">即时通</a></li>			
+				<li class="zxkf"><a href="javascript:;">在线客服</a></li>
+				<li class="jhd">进货单<span>0</span>件</li>
+				<li class="sczh"><a href="javascript:;">商城账户</a></li>
+				<li class="sczh"><a href="javascript:;">帮助中心</a></li>
+				<li class="sczh"><a href="javascript:;">建行首页</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+<!--/top-->
+<!--header-->
+<div id="phd">
+
+	<div class="phd_pool">	
+	    <li class="phd_li"><a href="javascript:;"><span id="gosearch1" class="blblue" onclick="c1()">产品</span></a></li>
+		<li class="phd_li"><a href="javascript:;"><span id="gosearch2" class="" onclick="c2()">公司</span></a></li>
+		<li class="phd_li" style="width:65px;"><a href="javascript:;"><span id="gosearch3" class="" onclick="c3()">求购信息</span></a></li>
+		<li class="phd_li" style="background:none;"><a href="javascript:;"><span id="gosearch4" class="" onclick="c4()">资讯</span></a></li>
+		<a href="javascript:;"><span class="phd_search_super">高级搜索<span></span></span></a>
+		<br>
+		<!--全局搜索开始-->
+		<div class="phd_search_icon"><img src="images/phd_search_icon_17x18.png"></div>
+		<div class="phd_searchbar"><input type="text" class="phd_search_input1" value="请输入关键字">
+		<span class="phd_search_word">搜&nbsp;索</span></div>
+		<span class="phd_search_hit">热门搜索：
+		<a href="javascript:;"><span class="m5">移动电源</span></a>
+		<a href="javascript:;"><span class="m5 orange">红木家具</span></a>
+		<a href="javascript:;"><span class="m5">化学</span></a>
+		<a href="javascript:;"><span class="m5">家纺</span></a>
+		<a href="javascript:;"><span class="m5">茶叶</span></a>
+		<a href="javascript:;"><span class="m5">展会</span></a></span>
+	</div>
+	<!--全局搜索结束-->
+</div>
+<!--/header-->
+<div id="phd_nav">	
+	<div class="phd_nav_first_pool">
+	<span class="phd_nav_help"></span>
+    <li class="phd_nav_first"><a class="phd_nav_first" href="javascript:;"><span>我的首页</span></a></li>
+	<li class="phd_nav_first"><a class="phd_nav_first" href="javascript:;"><span>供应服务
+</span></a></li>
+	<li class="phd_nav_first"><a class="phd_nav_first" href="javascript:;"><span>采购服务
+</span></a></li>
+	<li class="phd_nav_first"><a class="phd_nav_first" href="javascript:;"><span>会员服务</span></a></li>
+	<li class="phd_nav_first"><a class="phd_nav_first" href="javascript:;"><span>信用管理</span></a></li>
+	<li class="phd_nav_first"><a class="phd_nav_first" href="javascript:;"><span>企业空间</span></a></li>
+	<li class="phd_nav_first"><a class="phd_nav_first" href="javascript:;"><span>资金托管</span></a></li>
+	<li class="phd_nav_first"><a class="phd_nav_first" href="javascript:;"><span>融资中心</span></a></li>
+	<li class="phd_nav_first"><a class="phd_nav_first" href="javascript:;"><span>营销活动</span></a></li>
+	<li class="phd_nav_first_tab"><a class="phd_nav_first phd_nav_first_now" href="javascript:;"><span>我的助手</span></a></li>
+	</div>
+</div>
+<div class="wrap">
+	<div class="pbd_breadlink">
+		<span>您所在的位置：</span><a href="javascript:;"><span>商务中心</span></a> &gt; <span>我的助手</span> &gt; <span>洽谈会管理</span>
+	</div>
+	<div class="phd_dp_wrap clearfix">
+		<div class="phd_dp_sider fl">
+            <h4 class="h4_big_title">我的助手</h4>
+            <dl class="dp_apply_nav">
+                <dt class="on">洽谈会管理</dt>
+                <dd style="display:block">
+                    <ul>
+                        <li><a href="洽谈会申办.html" class="on">洽谈会申办</a></li>
+                        <li><a href="洽谈会列表页.html" target="_blank">洽谈会报名</a></li>
+                        <li><a href="qt_qthsb.html">我申办的洽谈会</a></li>
+                        <li><a href="我报名的洽谈会.html">我报名的洽谈会</a></li>
+                        <li><a href="我管理的洽谈会.html">我管理的洽谈会</a></li>
+                    </ul>
+                </dd>
+            </dl>
+		</div>
+		<div class="phd_dp_main fr">
+			<div class="dp_apply_con">
+				<div class="dp_apply_top"></div>
+				<div class="dp_apply_center">
+					<h3>我要申办</h3>
+					<div class="account_title_1">
+						<b>温馨提示：</b>请在申办前确认是否满足企业申办洽谈会的条件，如果不满足将无法通过审核。
+					</div>
+					<dl class="account_dl">
+						<dt class="title1">洽谈会信息</dt>
+						<dd>
+							<table>
+								<tr>
+									<th width="120" height="37"><span class="red" >*</span>洽谈会主题：</th>
+									<td><input type="text" class="input_account" value="" id="theme_name">
+									<span><b style="color:#f60;" id="add_count1">0</b>/30</span>
+									<div class="help_this" id="text_1">必填项不可为空</div>
+									<div class="help_this" id="text_1_1">请输入6-30个字的内容</div>
+									</td>
+								</tr>
+								<tr>
+									<th height="37"><span class="red" >*</span>洽谈会类型：</th>
+									<td>
+										<div class="type_dropdwn" style="z-index: 9999999;width:60px;">
+											<p>采购</p>
+											<ul style="width:60px">
+												<li class="purchase">采购</li>
+												<li class="supply">供应</li>
+											</ul>
+										</div>						
+									</td>
+								</tr>
+								<tr>
+	                                <th><span class="red" >*</span>行业类目：</th>
+	                                <td>
+										<div class="type_dropdwn trade_dropdwn" style="z-index: 9999998;">
+											<p id="type_name">请选择行业类目</p>
+											<ul>
+												<li>女装</li>
+												<li>鞋类</li>
+												<li>箱包</li>
+												<li>茶叶茶具</li>
+												<li>化学</li>
+												<li>童装</li>
+												<li>数码电子</li>
+												<li>农业</li>
+												<li>化工</li>
+												<li>电子材料</li>
+												<li>建筑材料</li>
+												<li>生活用品</li>
+												<li>宠物用品</li>
+												<li>纺织皮革</li>
+											</ul>
+											<div class="help_this" id="text_7" style="position: absolute;left:150px;top:-1px;">必填项不可为空</div>
+										</div>
+	                                </td>
+                            	</tr>
+							</table>
+								<div class="allclass_crry_mlj" style="z-index:11;">
+						        <div id="yime_all" style="z-index:999999999999;margin-left: -22px;">
+						               <div class="time_left">
+						               <span class="red">*</span>洽谈起止时间：<input type="text" id="demo" class="laydate-icon">
+						               </div>
+						               <div class="select_time">
+						                     <dl class="my_select">
+						                      <dt id="time1" class=""></dt>
+						                      <dd style="display: none;">
+						                        <ul style="height: 250px;z-index:999999999999" id="ulst1">
+						                          <li><a href="#nogo">08:00</a></li>
+						                          <li><a href="#nogo">09:00</a></li>
+						                          <li><a href="#nogo">10:00</a></li>
+						                          <li><a href="#nogo">11:00</a></li>
+						                          <li><a href="#nogo">12:00</a></li>
+						                          <li><a href="#nogo">13:00</a></li>
+						                          <li><a href="#nogo">14:00</a></li>
+						                          <li><a href="#nogo">15:00</a></li>
+						                          <li><a href="#nogo">16:00</a></li>
+						                          <li><a href="#nogo">17:00</a></li>
+						                          <li><a href="#nogo">18:00</a></li>
+						                        </ul>
+						                      </dd>
+						                     </dl>
+						               </div>
+						               <span style="float:left;margin-right:8px">至</span>
+						               <div class="select_time">
+						                     <dl class="my_select"  style="margin-left:0">
+						                      <dt id="time2" class=""></dt>
+						                      <dd style="display: none;">
+						                        <ul style="height: 250px;" id="ulst2">
+						                          <li><a href="#nogo">09:00</a></li>
+						                          <li><a href="#nogo">10:00</a></li>
+						                          <li><a href="#nogo">11:00</a></li>
+						                          <li><a href="#nogo">12:00</a></li>
+						                          <li><a href="#nogo">13:00</a></li>
+						                          <li><a href="#nogo">14:00</a></li>
+						                          <li><a href="#nogo">15:00</a></li>
+						                          <li><a href="#nogo">16:00</a></li>
+						                          <li><a href="#nogo">17:00</a></li>
+						                          <li><a href="#nogo">18:00</a></li>
+						                        </ul>
+						                      </dd>
+						                     </dl>
+						               </div>
+						         	   <div class="help_this" id="text_4">必填项不可为空</div>
+						         	   <div class="help_this" id="text_4_1">活动结束时间应大于开始时间</div>
+						         </div>
+        					 </div>
+							<div class="allclass_crry_mlj dateline" style="z-index:10;">
+						        <div id="yime_all">
+						               <div class="time_left">
+						               <span class="red">*</span>报名截止时间：<input type="text" id="demo3" class="laydate-icon">
+						               </div>
+						         	    <div class="help_this" id="text_5" style="margin-left: 10px;">必填项不可为空</div>
+						         	   <div class="help_this" id="text_5_1">报名截止时间不能晚于洽谈会开始时间</div>
+						         </div>
+        					 </div>
+						</dd>
+					</dl>
+					<dl class="account_dl account_dl_2">
+						<dt class="title">供求信息</dt>
+						<dd>
+                        	<form name="stepform">
+							<table width="100%">
+								<tr>
+									<th width="120" height="37"><span class="red" >*</span>洽谈金额：</th>
+									<!--<td><input type="text" class="input_account" id="budget_money" placeholder="请填写本次洽谈会的交易预算金额"> 元 <div class="help_this" id="text_2">必填项不可为空</div>
+									<div class="help_this" id="text_2_1">请输入1-999999999数字</div>
+									</td>-->
+                                    <td><input id="budget_money" name="txtTranAmt" type="text" minlength="1" maxlength="11" class="pbd_input_normal input_account" onkeyup="show_amt()" onkeydown="show_amt()" verification="true" highlight="true" needhighlightid="transfer" placeholder="请填写本次洽谈会的交易预算金额"> 万元 <div class="help_this" id="text_2">必填项不可为空</div>
+									<div class="help_this" id="text_2_1">请输入1-999999999数字</div>
+									</td>
+								</tr>
+							</table>
+                            </form>
+							<dl class="detailed_list mall_list">
+								<dt style="position: relative; right: -1px; padding-top: 8px;">采购清单：</dt>
+								<dd>
+									<table id="table1" border="0" class="product_table" style="margin-left:-5px;">
+										<tr>
+											<th class="name">产品名称</th>
+											<th class="describe">规格描述</th>
+											<th class="count">数量</th>
+											<th class="unit">单位</th>
+											<th style="display:none"></th>
+										</tr>
+										<tr>
+											<td><input type="text" class="inputStyle" /></td>
+									        <td><input type="text" class="inputStyle" placeholder="请填写50字以内规格说明" /></td>
+											<td><input type="text" class="w80" /></td>
+											<td><input type="text" class="w80" /></td>
+											<td class="add_redu"><span class="add" id="add1"></span><span class="reduce"></span></td>
+										</tr>
+									</table>									
+								</dd>
+							</dl>
+							<dl class="detailed_list supply_list" style="display:none">
+								<dt style="position: relative; right: -1px; padding-top: 8px;">供应清单：</dt>
+								<dd>
+									<table border="1" id="table2" class="product_table" style="margin-left:-5px;">
+										<tr>
+											<th class="name">产品名称</th>
+											<th class="describe">规格描述</th>
+											<th class="count">数量</th>
+											<th class="unit">单位</th>
+											<th class="unit">参考价</th>
+											<th style="display:none"></th>
+										</tr>
+										<tr>
+											<td><input type="text" class="inputStyle" /></td>
+									        <td><input type="text" class="inputStyle"/></td>
+											<td><input type="text" class="w80" /></td>
+											<td><input type="text" class="w80" /></td>
+											<td><input type="text" class="w80" /></td>
+											<td class="add_redu"><span class="add" id="add2"></span><span class="reduce"></span></td>
+										</tr>										
+									</table>	
+								</dd>
+							</dl>
+							<div class="ask_question" style="margin-left:54px">
+								<span style="vertical-align:top;display:inline-block;margin-top: 5px; position: relative; right: -6px;">其它说明：</span>
+								<textarea id="else_explain" placeholder="请填写您对产品的特殊要求，如具体规格、型号、加工方式、物流方式等" style=""></textarea>
+								<div style="display:inline-block;" ><span><b style="color:#f60;" id="add_count2">0</b>/300</span></div>
+								<div class="help_this" id="text_3">必填项不可为空
+								</div>
+								<div class="help_this" id="text_3_1">请输入50字符内内容
+								</div>
+							</div>
+						</dd>
+					</dl>
+					<dl class="account_dl account_dl_2">
+						<dt class="title">报名方要求</dt>
+						<dd>
+                        	<div class="custom_attribute clearfix" style="margin-left:25px;margin-top:20px">
+								<span style="margin-left: -1px;line-height: 30px;">报名需提供信息：</span>
+								<table id="table3" border="1" class="product_table myinfo" style="margin-left:0">
+									<tbody>
+										<tr>
+											<td style="position: relative; left: -5px;"><input type="text" class="inputStyle" id="t67" placeholder="请输入内容，如‘合作海外企业’" onfocus="showtips()" onblur="hidetips()"/></td>
+											<td class="add_redu">
+													<span class="add" id="add3"></span><span class="reduce"></span>	
+													<div class="help_this" id="text_66" style="left:40px;  width:350px; position:absolute; text-indent:-45px;background: url(images/testbg3.png) no-repeat;left:32px;top:0px;">您最多可以自定义5条需要报名方填写的信息。</div>
+                           <div class="help_this" id="text_67"style="left: 40px; width: 317px; position: absolute; text-indent: 40px; display: none; background: url(images/testbg4.png) no-repeat;left:20px;top:0px;">报名需提供信息为报名方在报名时必须提供的信息。</div>
+                      </td>
+										</tr>
+									</tbody>
+								</table>
+								<div  id="tips_img" style="display:none;">
+									<img src="images/icon_fa_question.jpg" width="14" height="14" title="报名需提供信息为报名方在报名时必须提供的信息，您最多可以自定义5条需要报名方填写的信息。" alt="" />
+								</div>
+							</div>
+                            
+							<div class="ask_question" style="margin-left:45px">
+								<span style="vertical-align:top;display:inline-block;margin-top:5px; position: relative; left: 3px;">报名方要求：</span>
+								<!--<textarea id="app_requ" placeholder="请输入对报名方的要求"></textarea>--><textarea cols="100" rows="4" id="app_requ" placeholder="请填写对报名方参会的要求、条件、规则等。" style="position: relative; left: -3px;" ></textarea>
+								<div style="display:inline-block;" ><span><b style="color:#f60;" id="add_count3">0</b>/300</span></div>
+								<div class="help_this" id="text_6" style="left:402px">必填项不可为空
+								</div>
+							</div>
+						</dd>
+					</dl>
+                    <dl class="account_dl">
+						<dt class="title">申办方信息</dt>
+						<dd style="margin-bottom:10px">
+							<table width="100%">
+								<tbody><tr>
+									<th width="120" height="37">企业名称：</th>
+									<td>
+										尼亚拉服装皮革有限公司
+									</td>
+								</tr>
+								<tr>
+									<th width="120" height="37">企业所在地：</th>
+									<td>
+										广东省 广州市
+									</td>
+								</tr>
+								<tr>
+									<th width="120" height="37">企业性质：</th>
+									<td>
+										私营企业
+									</td>
+								</tr>
+								<tr>
+									<th width="120" height="37"><label class="red">*</label>联系人：</th>
+									<td>
+										<input type="text" class="input_account" value="张天" style="padding-left:5px;">
+									</td>
+								</tr>
+								<tr>
+									<th width="120" height="37"><label class="red">*</label>联系电话：</th>
+									<td>
+										<input type="text" class="input_account" value="13902883768" style="padding-left:5px;">
+									</td>
+								</tr>
+								<tr style="line-height:25px">
+									<th width="120" height="37"  style="vertical-align: top;">企业简介：</th>
+									<td >
+			
+										<textarea style="width:426px;height:82px;line-height:20px;padding-top: 1px;" >尼亚拉是一家具有现代化气息的皮草时装企业，率先推出的引领世界时尚潮流的时尚皮草品牌，在欧美时尚界获得了无数赞誉，秉承给穿着者打造另外一层皮肤的设计哲学，把欧洲浪漫情怀融合东方古典文化，引领皮草潮流。</textarea>
+										<span><b style="color:#f60;" id="add_count">99</b>/300</span>
+
+									</td>
+								</tr>
+							</tbody></table>
+						</dd>
+					</dl>
+				</div>
+				<div class="dp_apply_bottom"></div>
+				<div class="account_opeart">
+					<a class="btn_submit" href="洽谈会申办成功.html" >提交</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!--footer-->
+		<div id="footer">
+		    <div id="footer_box">
+		       
+		        <!--site info-->
+		        <div class="footer_site_info">
+		            <div class="footer_nav">
+		                <a href="javascript:;" class="blue" style="margin-right:20px;">关于我们</a>
+		                <a href="javascript:;" class="blue" style="margin-right:20px;">服务条款</a>
+		                <a href="javascript:;" class="blue" style="margin-right:20px;">免责声明</a>
+		                <a href="javascript:;" class="blue" style="margin-right:20px;">联系我们</a>
+		                <a href="javascript:;" class="blue" style="margin-right:20px;">网站地图</a>
+                        <span>© 版权所有 中国建设银行版权所有 京ICP备 13030780号</span>
+                        </div>
+                     <div class="footer_info">
+		                <p>总行地址：中国北京西城区金融大街25号 邮编：100033 手机网站：m.ccb.com</p>
+		            </div>
+                    <div class="footer_img"> 
+                    <a href="javascript:;"><img src="images/ico_bottom.png" class="icon_left"></a>
+                    <a href="javascript:;"><img src="images/ico_cxwz.png"></a>
+                   </div>
+		        </div>
+		        <!--/site info-->
+		    </div>
+		</div>
+<!--/footer-->
+<script>
+$(function(){
+	
+	$(".dp_apply_nav dt").bind("click",function(){
+		$(this).toggleClass("on");
+		$(this).next("dd").slideToggle();
+	});
+	var all = $('.table_site th :checkbox'),
+  		items = $(':checkbox[name=items]');
+    all.bind("click",function(){
+        items.add(all).attr('checked', this.checked);
+    });
+    items.click(function(e){
+        e.stopPropagation();
+        all.attr('checked', items.size() == items.filter(':checked').size());
+    });
+
+    $(".show_info").toggle(function(){
+    	$(this).text("点击展开");
+    	$(this).parent("dt").siblings("dd").slideUp();
+    },function(){
+    	$(this).text("点击收起");
+    	$(this).parent("dt").siblings("dd").slideDown();
+    })
+	$(".phd_dp_sider").css("height",$(".phd_dp_main").height()-12);
+	$(".dp_apply_nav").css("height",$(".phd_dp_sider").height()-$(".phd_dp_sider .h4_big_title").height()-40)
+})
+enterAccount();
+
+</script>
+<script type="text/javascript">
+
+/*var start = {
+    elem: '#demo',
+    format: 'YYYY-MM-DD',
+    min: laydate.now(), //设定最小日期为当前日期
+    max: '2099-06-16', //最大日期
+    istime: true,
+    istoday: false,
+    choose: function(datas){
+         end.min = datas; //开始日选好后，重置结束日的最小日期
+         end.start = datas //将结束日的初始值设定为开始日
+    }
+};*/
+/*var end = {
+    elem: '#demo2',
+    format: 'YYYY-MM-DD',
+    min: laydate.now(),
+    max: '2099-06-16',
+    istime: true,
+    istoday: false,
+    choose: function(datas){
+        start.max = datas; //结束日选好后，重置开始日的最大日期
+    }
+};*/
+var start = {
+    elem: '#demo',
+    format: 'YYYY-MM-DD',
+    min: laydate.now(), //设定最小日期为当前日期
+    max: '2099-06-16', //最大日期
+    istime: true,
+    istoday: false,
+    choose: function(datas){
+		 	/*
+		 		var cur = convertString2Date(dates); 
+        end.max = convertDate2String(adjustDate(cur, -60*60*24)); //开始日选好后，重置结束日的最小日期
+        end.end =convertDate2String(adjustDate(cur, -60*60*24)); //将结束日的初始值设定为开始日
+		 		end.max = datas; //开始日选好后，重置结束日的最小日期
+       	end.end = datas //将结束日的初始值设定为开始
+       */
+     		timestamp1=Date.parse(new Date(datas.replace(/-/g, "/"))); 	//获取当前时间时间戳
+         timestamp2=timestamp1-86400000;	//前一天的时间戳
+         end.max = laydate.now(timestamp2);
+    }
+};
+var end = {
+    elem: '#demo3',
+    format: 'YYYY-MM-DD',
+    min:laydate.now(),
+    max: '2099-06-16' ,
+    istime:true ,
+    istoday: false,
+    choose: function(datas){
+        start.max = datas; //结束日选好后，重置开始日的最大日期
+        
+    }
+};
+
+laydate(start);
+laydate(end); 
+/*laydate({
+   elem: '#demo3',
+   format: 'YYYY-MM-DD',
+    min: laydate.now(), //设定最小日期为当前日期
+    max: '2099-06-16', //最大日期
+    istime: true,
+    istoday: false,
+    choose: function(datas){
+         end.min = datas; //开始日选好后，重置结束日的最小日期
+         end.start = datas //将结束日的初始值设定为开始日
+    }
+})
+laydate(start);
+laydate(end); 
+*/
+
+ time_old = function(){
+    var show_ts = document.getElementById('text_2');
+    var time1 = document.getElementById("time1").innerHTML;
+    var time2 = document.getElementById("time2").innerHTML;   
+    var first = document.getElementById("demo").value;  
+    var second = document.getElementById("demo2").value;  
+    var data1 = Date.parse(first.replace(/-/g,   "/"));  
+    var data2 = Date.parse(second.replace(/-/g,   "/"));  
+    var datadiff = data2-data1;  
+    var time = 31*24*60*60*1000;       
+    if(first.length>0 && second.length>0){  
+              if(datadiff<0 /*||datadiff>time*/){  
+                 //alert("结束时间应大于开始时间1");  
+                 show_ts.style.display ='inline-block';
+                 return false;  
+              }else if(datadiff==0){
+                var time_j=time1.replace(':','')-time2.replace(':','')
+                 if(time_j>0||time_j==0){
+                  //alert("结束时间应大于开始时间2");  
+                  show_ts.style.display ='inline-block';
+                  return false;  
+                 }
+              }else{
+                show_ts.style.display ='none'; 
+              }  
+     } 
+ } 
+
+
+ $(".my_select dt").click(function(){
+ 	$(this).siblings('dd').slideToggle();
+ })
+ /*校验*/
+ 	var Swi_ch = true;
+ 	$('.btn_submit').click(function(){
+
+		/*洽谈会主题*/
+		if ($('#theme_name').val() == '') {
+			$('#text_1').css({
+				'display': 'inline-block'
+			});
+			 Swi_ch = false;
+		} 
+		if ($('#theme_name').val().length > 0&& $('#theme_name').val().length < 6) {
+			$('#text_1_1').css({
+				'display': 'inline-block'
+			});
+			Swi_ch = false;
+		} else {
+			$('#text_1_1').fadeOut(250);
+		}
+		/*行业类目*/
+		if ($('#type_name').html() == '请选择行业类目') {
+			$('#text_7').css({
+				'display': 'inline-block'
+			});
+			 Swi_ch = false;
+		}
+		/*预算金额*/
+		if($('#budget_money').val()==''){
+			$('#text_2').css({'display': 'inline-block'});
+			 Swi_ch = false;
+		}
+		if(parseFloat($('#budget_money').val())>999999999){
+			$('#text_2_1').css({'display': 'inline-block'});
+		}
+		/*其它说明*/
+		/*if($('#else_explain').val()==''){
+			$('#text_3').css({'display': 'inline-block'});
+			 Swi_ch = false;
+		}*/
+		if($('#else_explain').val()!=''&&$('#else_explain').val().length>300){
+			$('#text_3_1').css({'display': 'inline-block'});
+			 Swi_ch = false;
+		}else{
+			$('#text_3_1').fadeOut(250);
+		}
+		/*时间*/
+
+		if($('#demo').val()==''||$('#time1').text()==''||$('#demo2').val()==''||$('#time2').text()==''){
+			$('#text_4').css({'display': 'inline-block'});
+			 Swi_ch = false;
+		}else{
+			$('#text_4_1').fadeOut(250);
+		}
+		if($('#demo').val()!=''&&$('#time1').text()!=''&&$('#demo2').val()!=''&&$('#time2').text()!=''){
+			$('#text_4').fadeOut(250);
+			 Swi_ch = false;
+		}
+		if($('#demo3').val()!=''){
+			$('#text_5').fadeOut(250);
+			 Swi_ch = false;
+		}else{
+			$('#text_5').css({'display': 'inline-block'});
+		}
+	
+		/*报名方要求*/
+		/*if ($('#app_requ').val() == '') {
+			$('#text_6').css({'display': 'inline-block'});
+			 Swi_ch = false;
+		}*/
+		if ($('#app_requ').val() != ''&&$('#app_requ').val().length>300) {
+			$('#text_6_1').css({'display': 'inline-block'});
+			 Swi_ch = false;
+		}else {
+			$('#text_6_1').fadeOut(250);
+		}
+       //总开关条件
+       if($('#text_1').is(':hidden')&& $('#text_1_1').is(':hidden') && $('#text_2').is(':hidden')&&$('#text_3').is(':hidden')&&$('#text_4').is(':hidden')&&$('#text_5').is(':hidden')&&$('#text_6').is(':hidden')
+        ){
+        Swi_ch = true;
+       }
+       
+       //总开关
+       if(Swi_ch == true){
+        return true;
+       }else{
+         return false;
+       }
+	})
+
+ $('#type_name').click(function(){
+ 	$('#text_7').fadeOut(250);
+ })
+ 
+ $('#demo,#time1,#demo2,#time2').click(function(){
+ 	$('#text_4').fadeOut(250);
+ })
+
+$('#demo3,#time3').click(function(){
+ 	$('#text_5').fadeOut(250);	
+})
+	/*洽谈会主题*/
+	$('#theme_name').keyup(function(){
+		if($(this).val()!=''){
+			$('#text_1').fadeOut(250);
+		}
+		if ($(this).val().length >=6){
+			$('#text_1_1').fadeOut(250);
+		}
+		if($(this).val()==''){
+			$('#text_1_1').hide();
+		}
+	});
+	/*预算金额*/
+	$('#budget_money').keyup(function(){
+		if ($(this).val() != '') {
+			$('#text_2').fadeOut(250);
+		}
+		if ($('#budget_money').val() < 999999999) {
+			$('#text_2_1').fadeOut(250);
+		}
+
+	});
+	/*其它说明*/
+	$('#else_explain').keyup(function(){
+		if($(this).val()!=''){
+			$('#text_3').fadeOut(250);
+		}
+	});
+
+	/*报名方要求*/
+	$('#app_requ').keyup(function() {
+		if ($(this).val() != '') {
+			$('#text_6').fadeOut(250);		
+		} 
+ 	}) 
+
+	/*行业类目*/
+	$('.choose_brand_main .level_2 li').click(function(){
+		$(this).addClass('on').siblings().removeClass('on');
+	})
+	/*活动时间*/
+	$('.my_select ul li a').click(function(){
+		var txt = $(this).text(); 
+    	$(this).parent('li').parent('ul').parent('dd').siblings('dt').html(txt); 
+    	$(".my_select dd").slideUp(); 
+	});
+	/*洽谈会类型,行业类目下拉菜单*/
+	$('.account_dl .type_dropdwn').click(function(){
+		$(this).find('ul').slideToggle(200);
+	})
+	$('.account_dl .type_dropdwn ul li').click(function(){
+		var txt=$(this).text();
+		$(this).parent('ul').siblings('p').html(txt);
+	});
+	/*表格切换*/
+	$('.supply').click(function(){
+		$('.supply_list').show();
+		$('.mall_list').hide();
+		$('#star-hide').hide();
+	})
+	$('.purchase').click(function(){
+		$('.mall_list').show();
+		$('.supply_list').hide();
+		$('#star-hide').show();
+	})
+	
+
+</script>
+<script type="text/javascript">
+		<!-- 表格动态添加行-->
+
+		//采购清单
+		$("#add1").click(function() {
+			$("#table1").append('<tr><td><input type="text" class="inputStyle" /></td><td><input type="text" class="inputStyle" /></td><td><input type="text" class="w80" /></td><td><input type="text" class="w80" /></td><td class="add_redu"><span class="add" onclick="addtr1(this)"></span><span class="reduce" onclick="deltr1(this)"></span></td></tr>')
+			$(this).hide().siblings('.reduce').show();
+		});
+		$('.reduce').click(function() {
+			$(this).parents('tr').remove();
+		})		
+		function deltr1(delbtn) {
+			$(delbtn).parents("tr").remove();
+		};
+		function addtr1(addbtn) {
+			$(addbtn).parents("tr").clone().appendTo('#table1');
+			$(addbtn).hide();
+			$(addbtn).siblings('.reduce').show();
+		};
+		//供应清单
+		$("#add2").click(function() {
+			$("#table2").append('<tr><td><input type="text" class="inputStyle" /></td><td><input type="text" class="inputStyle" /></td><td><input type="text" class="w80" /></td><td><input type="text" class="w80" /></td><td><input type="text" class="w80" /></td><td class="add_redu"><span class="add" onclick="addtr2(this)"></span><span class="reduce" onclick="deltr2(this)"></span></td></tr>')
+			$(this).hide().siblings('.reduce').show();
+		});
+		$('.reduce').click(function() {
+			$(this).parents('tr').remove();
+		})		
+		function deltr2(delbtn) {
+			$(delbtn).parents("tr").remove();
+		};
+		function addtr2(addbtn) {
+			$(addbtn).parents("tr").clone().appendTo('#table2');
+			$(addbtn).hide();
+			$(addbtn).siblings('.reduce').show();
+		};
+		//自定义标题
+		$("#add3").click(function() {
+			$("#table3").append('<tr><td style="position: relative; left: -5px;"><input type="text" class="inputStyle" /></td><td class="add_redu"><span class="add" onclick="addtr3(this)"></span><span class="reduce" onclick="deltr3(this)"></span></td></tr>')
+			$(this).hide().siblings('.reduce').show();
+		});
+		$('.reduce').click(function() {
+			$(this).parents('tr').remove();
+		})
+
+		function deltr3(delbtn) {
+			$(delbtn).parents("tr").remove();
+		};
+		function addtr3(addbtn) {
+			if($("#table3 tr").length<5){
+				$(addbtn).parents("tr").clone().appendTo('#table3');
+				$(addbtn).hide();
+				$(addbtn).siblings('.reduce').show();
+			}else{
+				//$(addbtn).hide();
+			//	$(addbtn).siblings('.reduce').show();
+				$("#text_66").show();
+				$("#text_67").hide();
+				}
+		};
+		//报名需提供信息提示信息
+	   function showtips(){
+ 		$("#text_67").show();
+		$("#text_66").hide();
+		}
+	   function hidetips(){
+ 		$("#text_67").hide();
+		$("#text_67").placeholder="请输入内容，如‘合作海外企业";
+		}		   
+		
+		//输入框字数限制
+		 var testVal = function(){
+			  $('.else_textarer').blur(function(){
+			    if($(this).val()==''){
+			      $('#ts_messagr').show();
+			    }else{
+			      $('#ts_messagr').hide();
+			    }
+			  })
+			}
+		$(document).on({
+		  	keyup:function(){public_function.textCounter('#theme_name','#add_count1',30);testVal();},
+		  	keydown:function(){public_function.textCounter('#theme_name','#add_count1',30);}
+		})
+		$(document).on({
+			keyup:function(){public_function.textCounter('#else_explain','#add_count2',300);testVal();},
+			keydown:function(){public_function.textCounter('#else_explain','#add_count2',300);}
+		})
+		$(document).on({
+			keyup:function(){public_function.textCounter('#app_requ','#add_count3',300);testVal();},
+			keydown:function(){public_function.textCounter('#app_requ','#add_count3',300);}
+		})
+		
+		//鼠标离开事件
+	$(document).ready(function(){		
+		var limit = "0";
+		if("0"==limit){
+		   $('#text_5_1').focus(function(){
+			   $("#tsmsg").html("").hide();//获取焦点时将上次操作的错误提示清空隐藏
+			   $("#acttent1").show();
+			   $("#tick01").hide();
+			   $("#custnamemsg").hide();
+		   }).blur(function(){
+			   $("#acttent1").hide();
+				  checkCustName(); 
+		   });	   
+		}
+		if("1"==limit){
+		   $('#text_5_1').focus(function(){
+			   $("#tsmsg").html("").hide();//获取焦点时将上次操作的错误提示清空隐藏
+			   $("#acttent1").show();
+			   $("#tick01").hide();
+			   $("#custnamemsg").hide();
+		   }).blur(function(){
+			   $("#acttent1").hide();
+			   validateCustName($("#text_5_1").val()); 
+		   });
+		}
+	});
+	</script>
+<script>
+	var arrTime=['09:00','10:00','11:00','12:00','13:00','14:00','15:00','16:00','17:00','18:00'];
+	 $('#ulst1 li').click(function() {
+	 	$('#ulst2 li').empty();
+	 	var i=$('#ulst1 li').index(this);
+	 	$.each(arrTime, function(key, val) {
+	 		if(key>=i){
+	 			$('#ulst2').append('<li><a href="#nogo">'+val+'</a></li>');
+	 		}
+	 	});
+		$("#ulst2 li").on("click","a", function() {
+     		$("#time2").text(this.innerHTML);
+     		$(".my_select dd").slideUp();
+ 		});
+});   
+</script>
+</body>
+</html>
